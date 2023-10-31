@@ -12,15 +12,15 @@ class StudentShowController extends Controller
   /**
    * Show student.
    *
-   * @param \App\Models\User $id
+   * @param \App\Models\User $student
    * @return \Illuminate\Http\JsonResponse
    */
 
-    public function __invoke( User $id ): JsonResponse
+    public function __invoke( User $student ): JsonResponse
     {
         return response()->json([
             'data' => [
-                'student' => $id,
+                'student' => $student,
             ],
             'message' => 'Student Show Successful.',
         ]);

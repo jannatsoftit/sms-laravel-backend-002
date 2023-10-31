@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Student;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Student\StudentUpdateRequest;
 use App\Models\User;
-use Illuminate\Http\JsonRequest;
+use Illuminate\Http\JsonResponse;
 
 class StudentUpdateController extends Controller
 {
@@ -13,16 +13,28 @@ class StudentUpdateController extends Controller
    * Update student.
    *
    * @param \App\Http\Requests\Student\StudentUpdateRequest $request
-   * @param \App\Models\User $id
+   * @param \App\Models\User $student
    * @return \Illuminate\Http\JsonResponse
    */
 
-    public function __invoke(StudentUpdateRequest $request, User $id): JsonResponse
+    public function __invoke(StudentUpdateRequest $request, User $student): JsonResponse
     {
-        $student->update($request->validate());
+        $student->update($request->validated());
+
         return response()->json([
             'data' => [
-                'student' => $student,
+                $validated = $request->validated(),
+                'student' => $student->update([
+                    "first_name" => $validated['first_name'],
+                    "last_name" => $validated['last_name'],
+                    "email" => $validated['email'],
+                    "designation" => $validated['designation'],
+                    "department" => $validated['department'],
+                    "password" => $validated['password'],
+                    "user_information" => $validated['user_information'],
+                    "image" => $validated['image'],
+                    "gender" => $validated['gender'],
+                ]),
             ],
             'message' => 'Student update successful.',
         ]);

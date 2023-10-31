@@ -10,19 +10,42 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "first_name": "fname",
-  "last_name": "lname",
-  "email": "a@b.c",
-  "designation": "address",
-  "department": "sdfzdg",
-  "password": "password",
-  "user_information": "0123456789",
-  "image": "0123456789",
+  "first_name": "jannatul",
+  "last_name": "lam",
+  "email": "lam@gmail.com",
+  "designation": "J.Software Engineer",
+  "department": "Software",
+  "password": "12345",
+  "user_information": "etretert",
+  "image": "dgfd.jpg",
   "gender": "female"
 }
 
 ### Show
 
 GET http://127.0.0.1:8000/api/students/9
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/students/9
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "Jannatul Ferdaous",
+  "last_name": "Lam",
+  "email": "lam@gmail.com",
+  "designation": "J.Software Engineer",
+  "department": "Software",
+  "password": "12345",
+  "user_information": "etretert",
+  "image": "dgfd.jpg",
+  "gender": "female"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/students/9
 Accept: application/json
 

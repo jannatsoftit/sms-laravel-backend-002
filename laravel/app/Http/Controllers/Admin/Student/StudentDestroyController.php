@@ -12,11 +12,11 @@ class StudentDestroyController extends Controller
   /**
    * Delete student.
    *
-   * @param \App\Models\User $id
+   * @param \App\Models\User $student
    * @return \Illuminate\Http\JsonResponse
    */
 
-    public function __invoke( User $id ): JsonResponse
+    public function __invoke( User $student ): JsonResponse
     {
         $student->delete();
         return response()->json([
