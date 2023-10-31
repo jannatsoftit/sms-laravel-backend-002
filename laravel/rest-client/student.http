@@ -1,0 +1,28 @@
+### List
+
+GET http://127.0.0.1:8000/api/students
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/students
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "fname",
+  "last_name": "lname",
+  "email": "a@b.c",
+  "designation": "address",
+  "department": "sdfzdg",
+  "password": "password",
+  "user_information": "0123456789",
+  "image": "0123456789",
+  "gender": "female"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/students/9
+Accept: application/json
+
