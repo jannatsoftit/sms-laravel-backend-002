@@ -28,6 +28,7 @@ class StudentListController extends Controller
                         'last_name',
                         'email',
                         'designation',
+                        'department',
                         'password',
                         'user_information',
                         'image',

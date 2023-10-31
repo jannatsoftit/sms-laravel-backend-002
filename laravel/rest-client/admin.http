@@ -1,16 +1,16 @@
 ### List
 
-GET http://127.0.0.1:8000/api/students
+GET http://127.0.0.1:8000/api/admins
 Accept: application/json
 
 ### Store
 
-POST http://127.0.0.1:8000/api/students
+POST http://127.0.0.1:8000/api/admins
 Accept: application/json
 Content-Type: application/json
 
 {
-  "first_name": "Labonno",
+  "first_name": "dgm",
   "last_name": "Chowdhury",
   "email": "labonno@gmail.com",
   "designation": "Engineer",
@@ -23,12 +23,12 @@ Content-Type: application/json
 
 ### Show
 
-GET http://127.0.0.1:8000/api/students/13
+GET http://127.0.0.1:8000/api/admins/
 Accept: application/json
 
 ### Update
 
-PUT http://127.0.0.1:8000/api/students/13
+PUT http://127.0.0.1:8000/api/admins/
 Accept: application/json
 Content-Type: application/json
 
@@ -46,6 +46,6 @@ Content-Type: application/json
 
 ### Destroy
 
-DELETE http://127.0.0.1:8000/api/students/9
+DELETE http://127.0.0.1:8000/api/admins/
 Accept: application/json
 

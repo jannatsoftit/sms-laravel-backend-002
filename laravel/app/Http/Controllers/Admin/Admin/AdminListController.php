@@ -2,19 +2,42 @@
 
 namespace App\Http\Controllers\Admin\Admin;
 
-use Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\AdminListRequest;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class AdminListController extends Controller
- {
+{
+  /**
+   * List admin.
+   *
+   * @param \Illuminate\Http\Request $request
+   * @return \Illuminate\Http\JsonResponse
+   */
 
-    public function adminList()
+    public function __invoke(AdminListRequest $request): JsonResponse
     {
-        $admins = User::where( 'school_id', Auth::user()->school_id )->where( 'role_id', 1 )->paginate( 5 );
+        return response()->json([
+            'data' => [
+                'admins' => User::where('role_id', 1)->where('school_id', 1)->get(
+                    $columns = [
+                        'first_name',
+                        'last_name',
+                        'email',
+                        'designation',
+                        'department',
+                        'password',
+                        'user_information',
+                        'image',
+                        'gender',
+                    ],
+                ),
+            ],
 
-        return view( 'admin.admin.adminlist', [ 'admins' => $admins ] )
-        ->with( 'i', ( request()->input( 'page', 1 ) - 1 ) * 5 );
+            'message' => 'Admin list successful.',
+        ]);
     }
 
  }

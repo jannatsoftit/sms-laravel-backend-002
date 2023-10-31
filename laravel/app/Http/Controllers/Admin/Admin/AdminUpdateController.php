@@ -2,70 +2,41 @@
 
 namespace App\Http\Controllers\Admin\Admin;
 
+use App\Http\Requests\Admin\AdminUpdateRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Models\User;
 
 class AdminUpdateController extends Controller
 {
+  /**
+   * Update admin.
+   *
+   * @param \App\Http\Requests\Admin\AdminUpdateRequest $request
+   * @param \App\Models\User $admin
+   * @return \Illuminate\Http\JsonResponse
+   */
 
-    //-- Admin single data edit
-
-    public function adminEdit( string $id, User $admin )
+    public function __invoke(AdminUpdateRequest $request, User $admin): JsonResponse
     {
-        $admin = User::find( $id );
-        return view( 'admin.admin.edit', compact( 'admin' ) );
+        $admin->update($request->validated());
+
+        return response()->json([
+            'data' => [
+                $validated = $admin->validated(),
+                'admin' => $admin->update([
+                    "first_name" => $validated['first_name'],
+                    "last_name" => $validated['last_name'],
+                    "email" => $validated['email'],
+                    "designation" => $validated['designation'],
+                    "department" => $validated['department'],
+                    "password" => $validated['password'],
+                    "user_information" => $validated['user_information'],
+                    "image" => $validated['image'],
+                    "gender" => $validated['gender'],
+                ]),
+            ],
+            'message' => 'Admin update successful.',
+        ]);
     }
-
-    //-- Admin data update
-
-    public function adminUpdate( Request $request, string $id, User $admin )
-    {
-
-        $update_data = $request->all();
-
-        if ( !empty( $update_data[ 'image' ] ) ) {
-            $file = $update_data[ 'image' ];
-            $filename = time(). '.' .$file->getClientOriginalExtension();
-            $file->move( 'AD_img', $filename );
-            $image = $filename;
-        } else {
-            $image = '';
-        }
-
-        $info = array(
-            'address' => $update_data[ 'address' ],
-            'phone' => $update_data[ 'phone' ],
-            'blood_group' => $update_data[ 'blood_group' ],
-        );
-
-        $update_data[ 'user_information' ] = json_encode( $info );
-
-        if ( !empty( $update_data[ 'image' ] ) ) {
-            User::where( 'id', $id )->update( [
-                'first_name' => $update_data[ 'first_name' ],
-                'last_name' => $update_data[ 'last_name' ],
-                'email' => $update_data[ 'email' ],
-                'gender' => $update_data[ 'gender' ],
-                'user_information' => $update_data[ 'user_information' ],
-                'image' => $image,
-            ] );
-
-        } elseif ( empty( $update_data[ 'image' ] ) ) {
-            User::where( 'id', $id )->update( [
-                'first_name' => $update_data[ 'first_name' ],
-                'last_name' => $update_data[ 'last_name' ],
-                'email' => $update_data[ 'email' ],
-                'gender' => $update_data[ 'gender' ],
-                'user_information' => $update_data[ 'user_information' ],
-            ] );
-
-        } else {
-            return 'image need';
-        }
-
-        return redirect()->route( 'admin.admin' )->with( 'success', 'Admin Info Updated Successfully!!' );
-
-    }
-
 }

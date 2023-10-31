@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 //----- Custom Admin Dashboard Start -----//
 
-// use App\Http\Controllers\Admin\Admin\{
-//     AdminDashboardController,
-//     AdminDestroyController,
-//     AdminListController,
-//     AdminShowController,
-//     AdminStoreController,
-//     AdminUpdateController,
-// };
+use App\Http\Controllers\Admin\Admin\{
+    // AdminDashboardController,
+    AdminDestroyController,
+    AdminListController,
+    AdminShowController,
+    AdminStoreController,
+    AdminUpdateController,
+};
 
 use App\Http\Controllers\Admin\Student\{
     StudentDestroyController,
@@ -57,14 +57,16 @@ Route::group(['middleware' => 'admin','auth'], function(){
     // Route::post('admin/admin/update/{id}', [AdminUpdateController::class,'adminUpdate'])->name('admin.admin.update');
     // Route::get('admin/admin/delete/{id}', [AdminDestroyController::class,'adminDelete'])->name('admin.admin.delete');
 
-    // //-- Student routes
-    // Route::get('/students', [StudentListController::class,'studentList']);
-    // Route::get('admin/student/create', [StudentStoreController::class,'studentCreate']);
-    // Route::post('admin/student/store', [StudentStoreController::class,'studentStore']);
-    // Route::get('admin/student/show/{id}', [StudentShowController::class,'studentShow']);
-    // Route::get('admin/student/edit/{id}', [StudentUpdateController::class,'studentEdit']);
-    // Route::post('admin/student/update/{id}', [StudentUpdateController::class,'studentUpdate']);
-    // Route::get('admin/student/delete/{id}', [StudentDestroyController::class,'studentDelete']);
+    Route::group(['prefix' => 'admins'], function() {
+        Route::get('', AdminListController::class);
+        Route::post('', AdminStoreController::class);
+        Route::group(['prefix' => '{admin}'], function() {
+        Route::get('', AdminShowController::class);
+        Route::put('', AdminUpdateController::class);
+        Route::delete('', AdminDestroyController::class);
+        });
+
+    });
 
     Route::group(['prefix' => 'students'], function() {
         Route::get('', StudentListController::class);
