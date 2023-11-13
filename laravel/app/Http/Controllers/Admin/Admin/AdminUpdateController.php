@@ -23,7 +23,7 @@ class AdminUpdateController extends Controller
 
         return response()->json([
             'data' => [
-                $validated = $admin->validated(),
+                $validated = $request->validated(),
                 'admin' => $admin->update([
                     "first_name" => $validated['first_name'],
                     "last_name" => $validated['last_name'],

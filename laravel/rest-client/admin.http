@@ -23,29 +23,29 @@ Content-Type: application/json
 
 ### Show
 
-GET http://127.0.0.1:8000/api/admins/
+GET http://127.0.0.1:8000/api/admins/20
 Accept: application/json
 
 ### Update
 
-PUT http://127.0.0.1:8000/api/admins/
+PUT http://127.0.0.1:8000/api/admins/20
 Accept: application/json
 Content-Type: application/json
 
 {
-    "first_name": "Morium",
+    "first_name": "Morium5463",
     "last_name": "Islam",
     "email": "morium@gmail.com",
     "designation": "Software Engineer",
     "department": "Software",
     "password": "123",
-    "user_information": "user_information",
+    "user_information": "werghhbr",
     "image": "dgfd.jpg",
     "gender": "female"
 }
 
 ### Destroy
 
-DELETE http://127.0.0.1:8000/api/admins/
+DELETE http://127.0.0.1:8000/api/admins/20
 Accept: application/json
 
