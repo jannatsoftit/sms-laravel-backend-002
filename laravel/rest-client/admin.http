@@ -10,12 +10,12 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "first_name": "dgm",
-  "last_name": "Chowdhury",
+  "first_name": "mimm",
+  "last_name": "Chofbhdfsnfwdhury",
   "email": "labonno@gmail.com",
-  "designation": "Engineer",
-  "department": "EEE",
-  "password": "123",
+  "designation": "Engfngfgineer",
+  "department": "gfdn",
+  "password": "gdnfgn",
   "user_information": "user_information",
   "image": "dgfd.jpg",
   "gender": "female"
@@ -23,22 +23,22 @@ Content-Type: application/json
 
 ### Show
 
-GET http://127.0.0.1:8000/api/admins/20
+GET http://127.0.0.1:8000/api/admins/22
 Accept: application/json
 
 ### Update
 
-PUT http://127.0.0.1:8000/api/admins/20
+PUT http://127.0.0.1:8000/api/admins/21
 Accept: application/json
 Content-Type: application/json
 
 {
-    "first_name": "Morium5463",
+    "first_name": "Suhana",
     "last_name": "Islam",
-    "email": "morium@gmail.com",
+    "email": "suhana@gmail.com",
     "designation": "Software Engineer",
     "department": "Software",
-    "password": "123",
+    "password": "45434",
     "user_information": "werghhbr",
     "image": "dgfd.jpg",
     "gender": "female"
