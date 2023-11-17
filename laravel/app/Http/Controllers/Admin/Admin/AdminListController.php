@@ -23,6 +23,7 @@ class AdminListController extends Controller
             'data' => [
                 'admins' => User::where('role_id', 1)->where('school_id', 1)->get(
                     $columns = [
+                        'id',
                         'first_name',
                         'last_name',
                         'email',
