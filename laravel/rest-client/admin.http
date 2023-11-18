@@ -23,17 +23,17 @@ Content-Type: application/json
 
 ### Show
 
-GET http://127.0.0.1:8000/api/admins/2
+GET http://127.0.0.1:8000/api/admins/72
 Accept: application/json
 
 ### Update
 
-PUT http://127.0.0.1:8000/api/admins/1
+PUT http://127.0.0.1:8000/api/admins/72
 Accept: application/json
 Content-Type: application/json
 
 {
-    "first_name": "Suhana",
+    "first_name": "45675756",
     "last_name": "Islam",
     "email": "suhana@gmail.com",
     "designation": "Software Engineer",
