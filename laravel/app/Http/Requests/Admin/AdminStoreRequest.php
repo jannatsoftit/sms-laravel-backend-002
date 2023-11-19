@@ -41,7 +41,7 @@ class AdminStoreRequest extends FormRequest
       'department' => 'required',
       'password' => 'required',
       'user_information' => 'required',
-      'image' => 'required',
+      'image' => 'required|image|mimes:jpg,png,jpeg,svg,gif|max:2048',
       'gender' => 'required',
     ];
   }
