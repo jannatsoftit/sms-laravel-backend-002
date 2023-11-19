@@ -19,6 +19,25 @@ class AdminUpdateController extends Controller
 
     public function __invoke(AdminUpdateRequest $request, User $admin): JsonResponse
     {
+
+        $imageName = '';
+
+        if($request->has('image')){
+
+            if($admin->image){
+                $admin->image->delete();
+            }
+
+            $image = $request->file('image');
+
+            $newImage = time().'.'.$image->getClientOriginalExtension();
+
+            $image->move( 'AD_img', $newImage );
+
+        }else {
+            $imageName = $admin->image;
+        }
+
         $admin->update($request->validated());
 
         return response()->json([
@@ -32,7 +51,7 @@ class AdminUpdateController extends Controller
                     "department" => $validated['department'],
                     "password" => $validated['password'],
                     "user_information" => $validated['user_information'],
-                    "image" => $validated['image'],
+                    "image" => $imageName,
                     "gender" => $validated['gender'],
                 ]),
             ],
