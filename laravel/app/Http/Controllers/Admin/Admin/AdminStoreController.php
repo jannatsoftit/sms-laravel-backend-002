@@ -26,24 +26,28 @@ class AdminStoreController extends Controller
 
         $imageName = time().'.'.$image->getClientOriginalExtension();
 
-        //Storage::disk('public')->put($imageName, file_get_contents($image));
+        // admin image save in storage file:
+        $image->storeAs('public/AD_img', $imageName);
 
-        $image->move( 'AD_img', $imageName );
+        //Storage::disk('public')->put($imageName, file_get_contents($image));
+        //Storage::disk('public')->put($imageName, file_get_contents($image));
+        //$image->move( 'AD_img', $imageName );
+
+
 
 
       return response()->json([
           'data' => [
               'admin' => User::create([
-
-                  'first_name' => $request->first_name,
-                  'last_name' => $request->last_name,
-                  'email' => $request->email,
-                  'designation' => $request->designation,
-                  'department' => $request->department,
-                  'password' => $request->password,
-                  'user_information' => $request->user_information,
-                  'image' => $imageName,
-                  'gender' => $request->gender,
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'designation' => $request->designation,
+                'department' => $request->department,
+                'password' => $request->password,
+                'user_information' => $request->user_information,
+                'image' => $imageName,
+                'gender' => $request->gender,
               ]
 
             ),

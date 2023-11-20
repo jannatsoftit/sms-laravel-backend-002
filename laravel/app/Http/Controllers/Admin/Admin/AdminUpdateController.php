@@ -20,13 +20,9 @@ class AdminUpdateController extends Controller
     public function __invoke(AdminUpdateRequest $request, User $admin): JsonResponse
     {
 
-        $imageName = '';
+        //$imageName = '';
 
         if($request->has('image')){
-
-            if($admin->image){
-                $admin->image->delete();
-            }
 
             $image = $request->file('image');
 
@@ -35,10 +31,11 @@ class AdminUpdateController extends Controller
             $image->move( 'AD_img', $newImage );
 
         }else {
-            $imageName = $admin->image;
-        }
 
-        $admin->update($request->validated());
+        $imageName = $admin->image;
+    }
+
+    $admin->update($request->validated());
 
         return response()->json([
             'data' => [
@@ -57,5 +54,6 @@ class AdminUpdateController extends Controller
             ],
             'message' => 'Admin update successful.',
         ]);
+
     }
 }
