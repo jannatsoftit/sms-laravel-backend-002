@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin\Admin;
 use App\Http\Requests\Admin\AdminStoreRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 class AdminStoreController extends Controller
 {
@@ -32,9 +32,6 @@ class AdminStoreController extends Controller
         //Storage::disk('public')->put($imageName, file_get_contents($image));
         //Storage::disk('public')->put($imageName, file_get_contents($image));
         //$image->move( 'AD_img', $imageName );
-
-
-
 
       return response()->json([
           'data' => [
