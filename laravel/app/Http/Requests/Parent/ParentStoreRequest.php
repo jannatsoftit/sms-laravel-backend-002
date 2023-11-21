@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Student;
+namespace App\Http\Requests\Parent;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StudentUpdateRequest extends FormRequest
+class ParentStoreRequest extends FormRequest
 {
   /**
-   * Determine if the student is authorized to make this request.
+   * Determine if the Parent is authorized to make this request.
    *
    * @return bool
    */
@@ -46,4 +46,3 @@ class StudentUpdateRequest extends FormRequest
     ];
   }
 }
-

@@ -18,76 +18,33 @@ class StudentStoreController extends Controller
 
    public function __invoke(StudentStoreRequest $request): JsonResponse
    {
+
+    if($request->has('image')){
+
+        $image = $request->file('image');
+
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+
+        // student image save in storage file:
+        $image->storeAs('public/S_img', $imageName);
+
       return response()->json([
           'data' => [
-              'student' => User::create($request->validated()),
+              'student' => User::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'designation' => $request->designation,
+                'department' => $request->department,
+                'password' => $request->password,
+                'user_information' => $request->user_information,
+                'image' => $imageName,
+                'gender' => $request->gender,
+              ])
           ],
           'message' => 'Student Store Successful.',
       ]);
    }
-
 }
 
-// class StudentStoreController extends Controller
-// {
-
-//     //-- student data create
-
-//     public function studentCreate()
-//     {
-//         return view( 'admin.student.create' );
-//     }
-
-//     //-- student store
-
-//     public function studentStore( Request $request )
-//     {
-
-//     $data = $request->validate( [
-//             'first_name' => 'required',
-//             'last_name' => 'required',
-//             'email' => 'required|email',
-//             'gender' => 'required',
-//             'password' => 'required|min:6',
-//             'address' => 'required',
-//             'phone' => 'required',
-//             'blood_group' => 'required',
-//             'image' => 'required|mimes:jpg,jpeg,png,svg,gif|max:2048',
-//         ] );
-
-//         if ( !empty( $data[ 'image' ] ) ) {
-//             $file = $data[ 'image' ];
-//             $filename = time(). '.' . $file->getClientOriginalName();
-//             $file->move( 'S_img', $filename );
-//             $image = $filename;
-
-//         } else {
-//             $image = '';
-//         }
-
-//         $info = array(
-//             'address' => $data[ 'address' ],
-//             'phone' => $data[ 'phone' ],
-//             'blood_group' => $data[ 'blood_group' ],
-//         );
-
-//         $data[ 'user_information' ] = json_encode( $info );
-
-//         User::create( [
-//             'first_name' => $data[ 'first_name' ],
-//             'last_name' => $data[ 'last_name' ],
-//             'email' => $data[ 'email' ],
-//             'gender' => $data[ 'gender' ],
-//             'password' => Hash::make( $data[ 'password' ] ),
-//             'role_id' => '2',
-//             'school_id' => Auth::user()->school_id,
-//             'user_information' => $data[ 'user_information' ],
-//             'image' => $image,
-//         ] );
-
-//         return redirect()->route( 'admin.student' )->with( 'success', 'Student Created Successfully!' );
-
-//     }
-
-// }
-
+}

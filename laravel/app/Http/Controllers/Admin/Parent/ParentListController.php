@@ -1,28 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Student;
+namespace App\Http\Controllers\Admin\Parent;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Student\StudentListRequest;
+use App\Http\Requests\Parent\ParentListRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class StudentListController extends Controller
+class ParentListController extends Controller
 {
   /**
-   * List student.
+   * List parent.
    *
    * @param \Illuminate\Http\Request $request
    * @return \Illuminate\Http\JsonResponse
    */
 
-
-    public function __invoke(StudentListRequest $request): JsonResponse
+    public function __invoke(ParentListRequest $request): JsonResponse
     {
         return response()->json([
             'data' => [
-                'students' => User::where( 'role_id', 2 )->where('school_id', 1)->get(
+                'parents' => User::where('role_id', 3)->where('school_id', 1)->get(
                     $columns = [
                         'id',
                         'first_name',
@@ -38,7 +37,7 @@ class StudentListController extends Controller
                 ),
             ],
 
-            'message' => 'student list successful.',
+            'message' => 'Parent list successful.',
         ]);
     }
 

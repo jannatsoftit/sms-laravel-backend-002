@@ -1,35 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Student;
+namespace App\Http\Controllers\Admin\Parent;
 
+use App\Http\Requests\Parent\ParentUpdateRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Student\StudentUpdateRequest;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
-class StudentUpdateController extends Controller
+class ParentUpdateController extends Controller
 {
   /**
-   * Update student.
+   * Update Parent.
    *
-   * @param \App\Http\Requests\Student\StudentUpdateRequest $request
-   * @param \App\Models\User $student
+   * @param \App\Http\Requests\Parent\ParentUpdateRequest $request
+   * @param \App\Models\User $parent
    * @return \Illuminate\Http\JsonResponse
    */
 
-    public function __invoke(StudentUpdateRequest $request, User $student): JsonResponse
+    public function __invoke(ParentUpdateRequest $request, User $parent): JsonResponse
     {
+
         $validated = $request->validated();
 
         if(!empty($validated['image'])){
 
             $file = $validated['image'];
 
-            // student image name
             $imageName = time().'.'.$file->getClientOriginalExtension();
 
-            // student image save in storage file:
-            $file->storeAs('public/S_img', $imageName);
+            // parent image save in storage file:
+            $file->storeAs('public/P_img', $imageName);
             $image = $imageName;
 
         }else{
@@ -40,7 +41,7 @@ class StudentUpdateController extends Controller
 
             return response()->json([
                 'data' => [
-                    'student' => $student->update([
+                    'parent' => $parent->update([
                         "first_name" => $validated['first_name'],
                         "last_name" => $validated['last_name'],
                         "email" => $validated['email'],
@@ -48,18 +49,19 @@ class StudentUpdateController extends Controller
                         "department" => $validated['department'],
                         "password" => $validated['password'],
                         "user_information" => $validated['user_information'],
+                        "user_information" => $validated['user_information'],
                         "image" => $imageName,
                         "gender" => $validated['gender'],
                     ]),
                 ],
-                'message' => 'Student update with image successful.',
+                'message' => 'Parent update with image successful.',
             ]);
 
         }elseif(empty($validated['image'])){
 
             return response()->json([
                 'data' => [
-                    'student' => $student->update([
+                    'parent' => $parent->update([
                         "first_name" => $validated['first_name'],
                         "last_name" => $validated['last_name'],
                         "email" => $validated['email'],
@@ -70,12 +72,10 @@ class StudentUpdateController extends Controller
                         "gender" => $validated['gender'],
                     ]),
                 ],
-                'message' => 'Student update without image successful.',
+                'message' => 'Parent update without image successful.',
             ]);
         }else{
-            return 'image not found';
+            return 'parent image not found';
         }
-
     }
-
 }

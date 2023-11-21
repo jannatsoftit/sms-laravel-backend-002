@@ -46,7 +46,6 @@ class AdminStoreController extends Controller
                 'image' => $imageName,
                 'gender' => $request->gender,
               ]
-
             ),
           ],
           'message' => 'Admin Store Successful.',
