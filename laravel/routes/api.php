@@ -30,6 +30,15 @@ use App\Http\Controllers\Admin\Parent\{
     ParentUpdateController,
 };
 
+use App\Http\Controllers\Admin\Teacher\{
+    TeacherDestroyController,
+    TeacherListController,
+    TeacherShowController,
+    TeacherStoreController,
+    TeacherUpdateController,
+};
+
+
 
 
 //----- Custom Admin Dashboard End -----//
@@ -99,8 +108,42 @@ Route::group(['middleware' => 'admin','auth'], function(){
 
     });
 
+    Route::group(['prefix' => 'teachers'], function() {
+        Route::get('', TeacherListController::class);
+        Route::post('', TeacherStoreController::class);
+        Route::group(['prefix' => '{teacher}'], function() {
+        Route::get('', TeacherShowController::class);
+        Route::put('', TeacherUpdateController::class);
+        Route::delete('', TeacherDestroyController::class);
+        });
+
+    });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
