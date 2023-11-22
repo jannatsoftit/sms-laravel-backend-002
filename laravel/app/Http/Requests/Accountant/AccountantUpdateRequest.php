@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Parent;
+namespace App\Http\Requests\Accountant;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ParentUpdateRequest extends FormRequest
+class AccountantUpdateRequest extends FormRequest
 {
   /**
-   * Determine if the Parent is authorized to make this request.
+   * Determine if the Accountant is authorized to make this request.
    *
    * @return bool
    */

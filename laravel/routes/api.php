@@ -39,6 +39,15 @@ use App\Http\Controllers\Admin\Teacher\{
 };
 
 
+use App\Http\Controllers\Admin\Accountant\{
+    AccountantDestroyController,
+    AccountantListController,
+    AccountantShowController,
+    AccountantStoreController,
+    AccountantUpdateController,
+};
+
+
 
 
 //----- Custom Admin Dashboard End -----//
@@ -83,7 +92,6 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::put('', AdminUpdateController::class);
         Route::delete('', AdminDestroyController::class);
       });
-
   });
 
     Route::group(['prefix' => 'students'], function() {
@@ -94,7 +102,6 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::put('', StudentUpdateController::class);
         Route::delete('', StudentDestroyController::class);
         });
-
     });
 
     Route::group(['prefix' => 'parents'], function() {
@@ -105,7 +112,6 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::put('', ParentUpdateController::class);
         Route::delete('', ParentDestroyController::class);
         });
-
     });
 
     Route::group(['prefix' => 'teachers'], function() {
@@ -116,7 +122,17 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::put('', TeacherUpdateController::class);
         Route::delete('', TeacherDestroyController::class);
         });
+    });
 
+
+    Route::group(['prefix' => 'accountants'], function() {
+        Route::get('', AccountantListController::class);
+        Route::post('', AccountantStoreController::class);
+        Route::group(['prefix' => '{accountant}'], function() {
+        Route::get('', AccountantShowController::class);
+        Route::put('', AccountantUpdateController::class);
+        Route::delete('', AccountantDestroyController::class);
+        });
     });
 
 
@@ -141,9 +157,6 @@ Route::group(['middleware' => 'admin','auth'], function(){
 
 
 
-
-
-    
 
 
 
