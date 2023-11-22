@@ -1,33 +1,35 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Admin;
+namespace App\Http\Controllers\Admin\Librarian;
 
-use App\Http\Requests\Admin\AdminUpdateRequest;
+use App\Http\Requests\Librarian\LibrarianUpdateRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
-class AdminUpdateController extends Controller
+class LibrarianUpdateController extends Controller
 {
   /**
-   * Update admin.
+   * Update librarian.
    *
-   * @param \App\Http\Requests\Admin\AdminUpdateRequest $request
-   * @param \App\Models\User $admin
+   * @param \App\Http\Requests\Librarian\LibrarianUpdateRequest $request
+   * @param \App\Models\User $librarian
    * @return \Illuminate\Http\JsonResponse
    */
 
-    public function __invoke(AdminUpdateRequest $request, User $admin): JsonResponse
+    public function __invoke(LibrarianUpdateRequest $request, User $librarian): JsonResponse
     {
 
         $validated = $request->validated();
 
         if(!empty($validated['image'])){
+
             $file = $validated['image'];
             $imageName = time().'.'.$file->getClientOriginalExtension();
-            // admin image save in storage file:
-            $file->storeAs('public/AD_img', $imageName);
+
+            // Librarian image save in storage file:
+            $file->storeAs('public/LA_img', $imageName);
             $image = $imageName;
 
         }else{
@@ -38,7 +40,7 @@ class AdminUpdateController extends Controller
 
             return response()->json([
                 'data' => [
-                    'admin' => $admin->update([
+                    'librarian' => $librarian->update([
                         "first_name" => $validated['first_name'],
                         "last_name" => $validated['last_name'],
                         "email" => $validated['email'],
@@ -50,14 +52,14 @@ class AdminUpdateController extends Controller
                         "gender" => $validated['gender'],
                     ]),
                 ],
-                'message' => 'Admin update with image successful.',
+                'message' => 'Librarian update with image successful.',
             ]);
 
         }elseif(empty($validated['image'])){
 
             return response()->json([
                 'data' => [
-                    'admin' => $admin->update([
+                    'librarian' => $librarian->update([
                         "first_name" => $validated['first_name'],
                         "last_name" => $validated['last_name'],
                         "email" => $validated['email'],
@@ -68,10 +70,10 @@ class AdminUpdateController extends Controller
                         "gender" => $validated['gender'],
                     ]),
                 ],
-                'message' => 'Admin update without image successful.',
+                'message' => 'Librarian update without image successful.',
             ]);
         }else{
-            return 'image not found';
+            return 'Librarian image not found';
         }
     }
 }

@@ -49,7 +49,6 @@ class ParentUpdateController extends Controller
                         "department" => $validated['department'],
                         "password" => $validated['password'],
                         "user_information" => $validated['user_information'],
-                        "user_information" => $validated['user_information'],
                         "image" => $imageName,
                         "gender" => $validated['gender'],
                     ]),

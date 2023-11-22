@@ -48,6 +48,15 @@ use App\Http\Controllers\Admin\Accountant\{
 };
 
 
+use App\Http\Controllers\Admin\Librarian\{
+    LibrarianDestroyController,
+    LibrarianListController,
+    LibrarianShowController,
+    LibrarianStoreController,
+    LibrarianUpdateController,
+};
+
+
 
 
 //----- Custom Admin Dashboard End -----//
@@ -134,6 +143,17 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::delete('', AccountantDestroyController::class);
         });
     });
+
+    Route::group(['prefix' => 'librarians'], function() {
+        Route::get('', LibrarianListController::class);
+        Route::post('', LibrarianStoreController::class);
+        Route::group(['prefix' => '{librarian}'], function() {
+        Route::get('', LibrarianShowController::class);
+        Route::put('', LibrarianUpdateController::class);
+        Route::delete('', LibrarianDestroyController::class);
+        });
+    });
+
 
 
 
