@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('class_list', function (Blueprint $table) {
-            $table->unsignedBigInteger('section_id')->nullable()->after('school_id');
-            $table->foreign('section_id')->references('id')->on('section');
+        Schema::table('exam_category', function (Blueprint $table) {
+            $table->string('class_name')->after('title');
+            $table->string('section_name');
         });
     }
 
@@ -22,6 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumn('class_list');
+        Schema::dropColumn('exam_category');
     }
+
 };

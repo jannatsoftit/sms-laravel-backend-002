@@ -56,6 +56,13 @@ use App\Http\Controllers\Admin\Librarian\{
     LibrarianUpdateController,
 };
 
+use App\Http\Controllers\Admin\ExamCategory\{
+    ExamCategoryDestroyController,
+    ExamCategoryListController,
+    ExamCategoryStoreController,
+    ExamCategoryUpdateController,
+};
+
 
 
 
@@ -154,30 +161,14 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Route::group(['prefix' => 'examCategories'], function() {
+        Route::get('', ExamCategoryListController::class);
+        Route::post('', ExamCategoryStoreController::class);
+        Route::group(['prefix' => '{examCategory}'], function() {
+        Route::put('', ExamCategoryUpdateController::class);
+        Route::delete('', ExamCategoryDestroyController::class);
+        });
+    });
 
 
 

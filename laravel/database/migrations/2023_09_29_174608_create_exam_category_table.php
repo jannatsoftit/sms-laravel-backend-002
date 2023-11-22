@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('exam_category', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('class_name');
+            $table->string('section_name');
             $table->unsignedBigInteger('school_id')->nullable();
             $table->foreign('school_id')->references('id')->on('school');
             $table->unsignedBigInteger('class_list_id')->nullable();
