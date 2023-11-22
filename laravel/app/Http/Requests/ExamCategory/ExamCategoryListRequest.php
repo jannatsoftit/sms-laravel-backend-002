@@ -52,7 +52,7 @@ class ExamCategoryListRequest extends FormRequest
 
     return [
       'columns' => 'nullable|array|min:1',
-      'columns.*' => 'required|alpha_dash|distinct|in:*,title,class_name,section_name,',
+      'columns.*' => 'required|alpha_dash|distinct|in:*,title,class_name,section_name',
     //   'page' => 'nullable|integer|min:1',
     //   'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

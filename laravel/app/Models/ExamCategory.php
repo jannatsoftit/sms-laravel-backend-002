@@ -17,7 +17,7 @@ class ExamCategory extends Model
          'school_id',
     ];
 
-    // protected $primaryKey = 'id';
+     protected $primaryKey = 'id';
 
     /**
      * The table associated with the model.

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Admin;
 use App\Http\Requests\Admin\AdminStoreRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
 class AdminStoreController extends Controller

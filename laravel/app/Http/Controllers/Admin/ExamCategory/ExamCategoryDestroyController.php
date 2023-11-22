@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\ExamCategory;
 use App\Http\Controllers\Controller;
 use App\Models\ExamCategory;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
 class ExamCategoryDestroyController extends Controller
 {

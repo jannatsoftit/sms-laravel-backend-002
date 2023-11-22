@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\ExamCategory;
 use App\Http\Requests\ExamCategory\ExamCategoryStoreRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Storage;
 use App\Models\ExamCategory;
 
 class ExamCategoryStoreController extends Controller

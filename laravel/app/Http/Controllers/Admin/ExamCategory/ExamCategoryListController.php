@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ExamCategoryListController extends Controller
 {
   /**
-   * List ExamCategory.
+   * List examCategory.
    *
    * @param \Illuminate\Http\Request $request
    * @return \Illuminate\Http\JsonResponse
@@ -26,7 +26,7 @@ class ExamCategoryListController extends Controller
                         'id',
                         'title',
                         'class_name',
-                        'section',
+                        'section_name',
                     ],
                 ),
             ],
