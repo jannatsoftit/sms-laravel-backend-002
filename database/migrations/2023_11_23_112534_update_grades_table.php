@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('exam_category', function (Blueprint $table) {
-            $table->string('class_name')->after('title');
-            $table->string('section_name');
+        Schema::table('grades', function (Blueprint $table) {
+            $table->integer('grade_point');
         });
     }
 
@@ -22,7 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumn('exam_category');
+        Schema::dropColumn('grades');
     }
-
 };

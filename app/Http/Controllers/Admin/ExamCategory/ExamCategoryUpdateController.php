@@ -39,6 +39,6 @@ class ExamCategoryUpdateController extends Controller
     //     'data' => [
     //         'examCategory' => $examCategory,
     //     ],
-    //     'message' => 'Exam Category updated 00 successfully.',
+    //     'message' => 'Exam Category updated successfully.',
     // ]);
 

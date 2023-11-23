@@ -64,6 +64,15 @@ use App\Http\Controllers\Admin\ExamCategory\{
     ExamCategoryUpdateController,
 };
 
+use App\Http\Controllers\Admin\Grade\{
+    GradeDestroyController,
+    GradeListController,
+    GradeShowController,
+    GradeStoreController,
+    GradeUpdateController,
+};
+
+
 
 
 
@@ -162,6 +171,7 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
+    // Exam category
     Route::group(['prefix' => 'examCategories'], function() {
         Route::get('', ExamCategoryListController::class);
         Route::post('', ExamCategoryStoreController::class);
@@ -171,6 +181,19 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::delete('', ExamCategoryDestroyController::class);
         });
     });
+
+    
+    // Grade
+    Route::group(['prefix' => 'grades'], function() {
+        Route::get('', GradeListController::class);
+        Route::post('', GradeStoreController::class);
+        Route::group(['prefix' => '{grade}'], function() {
+        Route::get('', GradeShowController::class);
+        Route::put('', GradeUpdateController::class);
+        Route::delete('', GradeDestroyController::class);
+        });
+    });
+
 
 
 

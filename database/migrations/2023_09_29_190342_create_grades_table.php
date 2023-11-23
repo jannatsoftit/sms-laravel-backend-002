@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->string('grade');
+            $table->integer('grade_point');
+            $table->integer('letter_grade');
+            $table->integer('marks_interval');
             $table->unsignedBigInteger('school_id')->nullable();
             $table->foreign('school_id')->references('id')->on('school');
-            $table->decimal('grade_point', 5, 2);
-            $table->integer('mark_from');
-            $table->integer('mark_upto');
             $table->timestamps();
         });
     }
