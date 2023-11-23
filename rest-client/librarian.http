@@ -1,0 +1,51 @@
+### List
+
+GET http://127.0.0.1:8000/api/librarians
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/librarians
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "Suhana",
+  "last_name": "Chowdhury",
+  "email": "suhana@gmail.com",
+  "designation": "Engineer",
+  "department": "Student",
+  "password": "45434",
+  "user_information": "werghhbr",
+  "image": "dgfd.jpg",
+  "gender": "Female"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/librarians/
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/librarians/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "first_name": "45675756",
+    "last_name": "Islam",
+    "email": "suhana@gmail.com",
+    "designation": "Software Engineer",
+    "department": "Software",
+    "password": "45434",
+    "user_information": "werghhbr",
+    "image": "dgfd.jpg",
+    "gender": "female"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/librarians/
+Accept: application/json
+
