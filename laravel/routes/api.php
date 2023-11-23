@@ -59,6 +59,7 @@ use App\Http\Controllers\Admin\Librarian\{
 use App\Http\Controllers\Admin\ExamCategory\{
     ExamCategoryDestroyController,
     ExamCategoryListController,
+    ExamCategoryShowController,
     ExamCategoryStoreController,
     ExamCategoryUpdateController,
 };
@@ -165,6 +166,7 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::get('', ExamCategoryListController::class);
         Route::post('', ExamCategoryStoreController::class);
         Route::group(['prefix' => '{examCategory}'], function() {
+        Route::get('', ExamCategoryShowController::class);
         Route::put('', ExamCategoryUpdateController::class);
         Route::delete('', ExamCategoryDestroyController::class);
         });

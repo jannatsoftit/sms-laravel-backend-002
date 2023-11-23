@@ -18,14 +18,15 @@ class ExamCategoryStoreController extends Controller
 
    public function __invoke(ExamCategoryStoreRequest $request): JsonResponse
    {
-        return response()->json([
-            'data' => [
+
+       return response()->json([
+           $validated = $request->validated(),
+           'data' => [
                 'examCategory' => ExamCategory::create([
-                    'title' => $request->title,
-                    'class_name' => $request->class_name,
-                    'section_name' => $request->section_name,
-                ]
-                ),
+                    'title' => $validated['title'],
+                    'class_name' => $validated['class_name'],
+                    'section_name' => $validated['section_name'],
+                ]),
             ],
             'message' => 'Exam Category Store Successful.',
         ]);

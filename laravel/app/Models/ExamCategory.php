@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ExamCategory extends Model
 {
@@ -17,7 +18,19 @@ class ExamCategory extends Model
          'school_id',
     ];
 
-     protected $primaryKey = 'id';
+     //protected $primaryKey = 'id';
+
+    protected $guarded=[];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
 
     /**
      * The table associated with the model.
