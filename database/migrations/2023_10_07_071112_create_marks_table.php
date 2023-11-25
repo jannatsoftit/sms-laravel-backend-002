@@ -22,9 +22,11 @@ return new class extends Migration
             $table->unsignedBigInteger('grades_id')->nullable();
             $table->foreign('grades_id')->references('id')->on('grades');
             $table->string('student_name');
-            $table->integer('total_marks');
-            $table->decimal('grade_point', 5, 2);
+            $table->integer('total_marks');  //marks_obtain
+            $table->decimal('grade_point', 5, 2); //Earned Grade Point
             $table->string('class_name');
+            $table->string('letter_grade');
+            $table->string('section');
             $table->string('comment');
             $table->timestamps();
         });

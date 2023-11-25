@@ -21,7 +21,7 @@ class GradeListController extends Controller
     {
         return response()->json([
             'data' => [
-                'grade' => Grade::where('school_id', 1)->get(
+                'grades' => Grade::where('school_id', 1)->get(
                     $columns = [
                         'id',
                         'grade_point',

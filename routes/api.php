@@ -72,6 +72,15 @@ use App\Http\Controllers\Admin\Grade\{
     GradeUpdateController,
 };
 
+use App\Http\Controllers\Admin\Mark\{
+    MarkDestroyController,
+    MarkListController,
+    MarkShowController,
+    MarkStoreController,
+    MarkUpdateController,
+};
+
+
 
 
 
@@ -182,7 +191,7 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
-    
+
     // Grade
     Route::group(['prefix' => 'grades'], function() {
         Route::get('', GradeListController::class);
@@ -191,6 +200,17 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::get('', GradeShowController::class);
         Route::put('', GradeUpdateController::class);
         Route::delete('', GradeDestroyController::class);
+        });
+    });
+
+    // Mark
+    Route::group(['prefix' => 'marks'], function() {
+        Route::get('', MarkListController::class);
+        Route::post('', MarkStoreController::class);
+        Route::group(['prefix' => '{mark}'], function() {
+        Route::get('', MarkShowController::class);
+        Route::put('', MarkUpdateController::class);
+        Route::delete('', MarkDestroyController::class);
         });
     });
 
