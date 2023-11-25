@@ -15,10 +15,18 @@ return new class extends Migration
     {
         Schema::create('offline_exam', function (Blueprint $table) {
             $table->id();
+            $table->string('room_number');
+            $table->string('building_name');
+            $table->string('exam_start_time');
+            $table->string('exam_end_time');
+            $table->string('date_time');
+            $table->integer('subject_code');
+            $table->string('section');
+            $table->string('class_name');
+            $table->string('paper');
             $table->string('exam_name');
-            $table->string('starting_date');
-            $table->string('ending_date');
             $table->integer('total_marks');
+            
             $table->unsignedBigInteger('school_id')->nullable();
             $table->foreign('school_id')->references('id')->on('school');
             $table->unsignedBigInteger('class_list_id')->nullable();

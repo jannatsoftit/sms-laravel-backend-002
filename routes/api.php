@@ -80,7 +80,13 @@ use App\Http\Controllers\Admin\Mark\{
     MarkUpdateController,
 };
 
-
+use App\Http\Controllers\Admin\OfflineExam\{
+    OfflineExamDestroyController,
+    OfflineExamListController,
+    OfflineExamShowController,
+    OfflineExamStoreController,
+    OfflineExamUpdateController,
+};
 
 
 
@@ -159,7 +165,6 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
-
     Route::group(['prefix' => 'accountants'], function() {
         Route::get('', AccountantListController::class);
         Route::post('', AccountantStoreController::class);
@@ -180,6 +185,7 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
+    
     // Exam category
     Route::group(['prefix' => 'examCategories'], function() {
         Route::get('', ExamCategoryListController::class);
@@ -214,6 +220,16 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
+    // Offline Exam
+    Route::group(['prefix' => 'offlineExams'], function() {
+        Route::get('', OfflineExamListController::class);
+        Route::post('', OfflineExamStoreController::class);
+        Route::group(['prefix' => '{offlineExam}'], function() {
+        Route::get('', OfflineExamShowController::class);
+        Route::put('', OfflineExamUpdateController::class);
+        Route::delete('', OfflineExamDestroyController::class);
+        });
+    });
 
 
 
