@@ -97,7 +97,13 @@ use App\Http\Controllers\Admin\ClassRoom\{
     ClassRoomUpdateController,
 };
 
-
+use App\Http\Controllers\Admin\Subject\{
+    SubjectDestroyController,
+    SubjectListController,
+    SubjectShowController,
+    SubjectStoreController,
+    SubjectUpdateController,
+};
 
 
 
@@ -250,6 +256,17 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::get('', ClassRoomShowController::class);
         Route::put('', ClassRoomUpdateController::class);
         Route::delete('', ClassRoomDestroyController::class);
+        });
+    });
+
+    // Subject
+    Route::group(['prefix' => 'subjects'], function() {
+        Route::get('', SubjectListController::class);
+        Route::post('', SubjectStoreController::class);
+        Route::group(['prefix' => '{subject}'], function() {
+        Route::get('', SubjectShowController::class);
+        Route::put('', SubjectUpdateController::class);
+        Route::delete('', SubjectDestroyController::class);
         });
     });
 
