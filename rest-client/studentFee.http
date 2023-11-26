@@ -1,0 +1,45 @@
+### List
+
+GET http://127.0.0.1:8000/api/studentFees
+
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/studentFees
+Accept: application/json
+Content-Type: application/json
+
+{
+    "invoice_no": "40021",
+    "student": "Jannat",
+    "invoice_title": "Academic Fee",
+    "total_amount": "$500",
+    "paid_amount": "$500",
+    "status": "ok"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/studentFees/
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/studentFees/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "class_room_name": "Class Room",
+    "room_number": "201",
+    "building_name": "Shapla Building",
+    "area": "2025 m",
+    "total_room": "13"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/studentFees/
+Accept: application/json
+

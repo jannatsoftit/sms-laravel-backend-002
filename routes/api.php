@@ -122,6 +122,14 @@ use App\Http\Controllers\Admin\ClassRoutine\{
 };
 
 
+use App\Http\Controllers\Admin\StudentFee\{
+    StudentFeeDestroyController,
+    StudentFeeListController,
+    StudentFeeShowController,
+    StudentFeeStoreController,
+    StudentFeeUpdateController,
+};
+
 
 //----- Custom Admin Dashboard End -----//
 
@@ -307,6 +315,22 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::delete('', ClassRoutineDestroyController::class);
         });
     });
+
+    // StudentFee
+    Route::group(['prefix' => 'studentFees'], function() {
+        Route::get('', StudentFeeListController::class);
+        Route::post('', StudentFeeStoreController::class);
+        Route::group(['prefix' => '{studentFee}'], function() {
+        Route::get('', StudentFeeShowController::class);
+        Route::put('', StudentFeeUpdateController::class);
+        Route::delete('', StudentFeeDestroyController::class);
+        });
+    });
+
+
+
+
+
 
 });
 
