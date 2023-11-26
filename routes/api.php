@@ -89,6 +89,16 @@ use App\Http\Controllers\Admin\OfflineExam\{
 };
 
 
+use App\Http\Controllers\Admin\ClassRoom\{
+    ClassRoomDestroyController,
+    ClassRoomListController,
+    ClassRoomShowController,
+    ClassRoomStoreController,
+    ClassRoomUpdateController,
+};
+
+
+
 
 
 //----- Custom Admin Dashboard End -----//
@@ -185,7 +195,7 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
-    
+
     // Exam category
     Route::group(['prefix' => 'examCategories'], function() {
         Route::get('', ExamCategoryListController::class);
@@ -232,6 +242,16 @@ Route::group(['middleware' => 'admin','auth'], function(){
     });
 
 
+    // Class Room
+    Route::group(['prefix' => 'classRooms'], function() {
+        Route::get('', ClassRoomListController::class);
+        Route::post('', ClassRoomStoreController::class);
+        Route::group(['prefix' => '{classRoom}'], function() {
+        Route::get('', ClassRoomShowController::class);
+        Route::put('', ClassRoomUpdateController::class);
+        Route::delete('', ClassRoomDestroyController::class);
+        });
+    });
 
 });
 
