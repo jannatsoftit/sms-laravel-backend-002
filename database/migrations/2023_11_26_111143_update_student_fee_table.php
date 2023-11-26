@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('syllabus', function (Blueprint $table) {
-            $table->unsignedBigInteger('school_id')->nullable()->after('paper');
-            $table->foreign('school_id')->references('id')->on('school');
+        Schema::table('student_fee', function (Blueprint $table) {
+            $table->timestamps();
         });
     }
 
@@ -22,7 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumn('syllabus');
+        Schema::dropColumn('student_fee');
     }
 };
-
