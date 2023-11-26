@@ -6,15 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Syllabus extends Model
+class ClassRoutine extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'day',
         'class_name',
         'subject_name',
         'paper',
-        'topic',
+        'class_time',
         'school_id',
     ];
 
@@ -25,7 +26,7 @@ class Syllabus extends Model
      *
      * @var string
      */
-    protected $table = 'syllabus';
+    protected $table = 'class_routine';
 
     protected $guarded = [];
 

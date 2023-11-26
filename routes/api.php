@@ -113,6 +113,13 @@ use App\Http\Controllers\Admin\Syllabus\{
     SyllabusUpdateController,
 };
 
+use App\Http\Controllers\Admin\ClassRoutine\{
+    ClassRoutineDestroyController,
+    ClassRoutineListController,
+    ClassRoutineShowController,
+    ClassRoutineStoreController,
+    ClassRoutineUpdateController,
+};
 
 
 
@@ -287,6 +294,17 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::get('', SyllabusShowController::class);
         Route::put('', SyllabusUpdateController::class);
         Route::delete('', SyllabusDestroyController::class);
+        });
+    });
+
+    // Class Routine
+    Route::group(['prefix' => 'classRoutines'], function() {
+        Route::get('', ClassRoutineListController::class);
+        Route::post('', ClassRoutineStoreController::class);
+        Route::group(['prefix' => '{classRoutine}'], function() {
+        Route::get('', ClassRoutineShowController::class);
+        Route::put('', ClassRoutineUpdateController::class);
+        Route::delete('', ClassRoutineDestroyController::class);
         });
     });
 
