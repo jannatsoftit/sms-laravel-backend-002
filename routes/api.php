@@ -105,6 +105,15 @@ use App\Http\Controllers\Admin\Subject\{
     SubjectUpdateController,
 };
 
+use App\Http\Controllers\Admin\Syllabus\{
+    SyllabusDestroyController,
+    SyllabusListController,
+    SyllabusShowController,
+    SyllabusStoreController,
+    SyllabusUpdateController,
+};
+
+
 
 
 //----- Custom Admin Dashboard End -----//
@@ -267,6 +276,17 @@ Route::group(['middleware' => 'admin','auth'], function(){
         Route::get('', SubjectShowController::class);
         Route::put('', SubjectUpdateController::class);
         Route::delete('', SubjectDestroyController::class);
+        });
+    });
+
+    // Syllabus
+    Route::group(['prefix' => 'syllabuses'], function() {
+        Route::get('', SyllabusListController::class);
+        Route::post('', SyllabusStoreController::class);
+        Route::group(['prefix' => '{syllabus}'], function() {
+        Route::get('', SyllabusShowController::class);
+        Route::put('', SyllabusUpdateController::class);
+        Route::delete('', SyllabusDestroyController::class);
         });
     });
 

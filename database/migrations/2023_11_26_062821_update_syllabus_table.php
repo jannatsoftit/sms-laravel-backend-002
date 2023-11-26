@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('subject', function (Blueprint $table) {
-            $table->string('subject_code')->after('subject_name');
-            $table->string('paper')->after('subject_name');
+        Schema::table('syllabus', function (Blueprint $table) {
+            $table->unsignedBigInteger('school_id')->nullable()->after('paper');
+            $table->foreign('school_id')->references('id')->on('school');
         });
     }
 
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumn('subject');
+        Schema::dropColumn('syllabus');
     }
 };
