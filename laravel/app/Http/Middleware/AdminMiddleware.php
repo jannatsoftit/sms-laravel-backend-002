@@ -18,7 +18,7 @@ class AdminMiddleware
 
      public function handle(Request $request, Closure $next)
      {
-        if(User::where( 'role_id', 2 )){
+        if(User::where( 'role_id', 1 )){
             return $next($request);
         }else{
             return redirect()->back();

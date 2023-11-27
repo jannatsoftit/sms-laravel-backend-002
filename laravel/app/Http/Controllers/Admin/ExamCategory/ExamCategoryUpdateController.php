@@ -19,10 +19,9 @@ class ExamCategoryUpdateController extends Controller
 
     public function __invoke(ExamCategoryUpdateRequest $request, ExamCategory $examCategory): JsonResponse
     {
-
         return response()->json([
-            $validated = $request->validated(),
             'data' => [
+                $validated = $request->validated(),
                 'examCategory' => $examCategory->update([
                     "title" => $validated['title'],
                     "class_name" => $validated['class_name'],
@@ -31,6 +30,15 @@ class ExamCategoryUpdateController extends Controller
             ],
             'message' => 'Exam Category updated successfully.',
         ]);
-        
+
     }
 }
+
+    // $examCategory->update($request->validated());
+    // return response()->json([
+    //     'data' => [
+    //         'examCategory' => $examCategory,
+    //     ],
+    //     'message' => 'Exam Category updated 00 successfully.',
+    // ]);
+
