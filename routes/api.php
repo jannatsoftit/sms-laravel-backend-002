@@ -131,6 +131,18 @@ use App\Http\Controllers\Admin\StudentFee\{
 };
 
 
+use App\Http\Controllers\Admin\ExpanseCategory\{
+    ExpanseCategoryDestroyController,
+    ExpanseCategoryListController,
+    ExpanseCategoryShowController,
+    ExpanseCategoryStoreController,
+    ExpanseCategoryUpdateController,
+};
+
+
+
+
+
 //----- Custom Admin Dashboard End -----//
 
 /*
@@ -147,7 +159,6 @@ use App\Http\Controllers\Admin\StudentFee\{
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-
 
 Route::group(['middleware' => 'admin','auth'], function(){
 
@@ -327,6 +338,16 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
+    // ExpanseCategory
+    Route::group(['prefix' => 'expanseCategories'], function() {
+        Route::get('', ExpanseCategoryListController::class);
+        Route::post('', ExpanseCategoryStoreController::class);
+        Route::group(['prefix' => '{expanseCategory}'], function() {
+        Route::get('', ExpanseCategoryShowController::class);
+        Route::put('', ExpanseCategoryUpdateController::class);
+        Route::delete('', ExpanseCategoryDestroyController::class);
+        });
+    });
 
 
 
