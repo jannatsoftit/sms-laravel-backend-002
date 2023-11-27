@@ -141,6 +141,7 @@ use App\Http\Controllers\Admin\ExpanseCategory\{
 
 
 use App\Http\Controllers\Admin\School\{
+    SchoolListController,
     SchoolShowController,
     SchoolStoreController,
     SchoolUpdateController,
@@ -357,6 +358,7 @@ Route::group(['middleware' => 'admin','auth'], function(){
 
     // School Information:
     Route::group(['prefix' => 'schools'], function() {
+        Route::get('', SchoolListController::class);
         Route::post('', SchoolStoreController::class);
         Route::group(['prefix' => '{school}'], function() {
         Route::get('', SchoolShowController::class);

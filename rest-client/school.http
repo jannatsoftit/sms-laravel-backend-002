@@ -1,3 +1,8 @@
+### List
+
+GET http://127.0.0.1:8000/api/schools
+Accept: application/json
+
 ### Store
 
 POST http://127.0.0.1:8000/api/schools
@@ -32,9 +37,3 @@ Content-Type: application/json
   "facebook_page": "gces.education",
   "status": "2"
 }
-
-### Destroy
-
-DELETE http://127.0.0.1:8000/api/schools/
-Accept: application/json
-
