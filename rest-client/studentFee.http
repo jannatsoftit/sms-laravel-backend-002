@@ -1,0 +1,46 @@
+### List
+
+GET http://127.0.0.1:8000/api/studentFees
+
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/studentFees
+Accept: application/json
+Content-Type: application/json
+
+{
+    "invoice_no": "40021",
+    "student": "Jannat",
+    "invoice_title": "Academic Fee",
+    "total_amount": "$500",
+    "paid_amount": "$500",
+    "status": "ok"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/studentFees/1
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/studentFees/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "invoice_no": "40021",
+    "student": "mim",
+    "invoice_title": "Academic Fee",
+    "total_amount": "$500",
+    "paid_amount": "$500",
+    "status": "ok"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/studentFees/
+Accept: application/json
+
