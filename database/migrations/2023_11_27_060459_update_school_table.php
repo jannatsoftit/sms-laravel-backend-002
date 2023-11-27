@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('student_fee', function (Blueprint $table) {
-            $table->timestamps();
+        Schema::table('school', function (Blueprint $table) {
+            $table->string('facebook_page')->nullable()->after('address');
         });
     }
 
@@ -21,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumn('student_fee');
+        Schema::dropColumn('school');
     }
 };

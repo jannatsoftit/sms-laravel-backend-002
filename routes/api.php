@@ -140,6 +140,12 @@ use App\Http\Controllers\Admin\ExpanseCategory\{
 };
 
 
+use App\Http\Controllers\Admin\School\{
+    SchoolShowController,
+    SchoolStoreController,
+    SchoolUpdateController,
+};
+
 
 
 
@@ -349,8 +355,14 @@ Route::group(['middleware' => 'admin','auth'], function(){
         });
     });
 
-
-
+    // School Information:
+    Route::group(['prefix' => 'schools'], function() {
+        Route::post('', SchoolStoreController::class);
+        Route::group(['prefix' => '{school}'], function() {
+        Route::get('', SchoolShowController::class);
+        Route::put('', SchoolUpdateController::class);
+        });
+    });
 
 
 });

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->integer('phone');
             $table->string('address');
-            $table->string('school_info');
+            $table->string('facebook_page');
             $table->integer('status');
             $table->timestamps();
         });
