@@ -39,7 +39,15 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+
+            /*
+             * This Sanctum middleware is responsible for ensuring that incoming requests from your
+             * react app can authenticate using Laravel’s session cookies.
+             */
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+            // sanctum middleware
+            'throttle:api',
+
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
@@ -64,8 +72,20 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+
+
+
+
+
+
+
+
+        // User
         'admin'=> \App\Http\Middleware\AdminMiddleware::class,
         'student'=> \App\Http\Middleware\StudentMiddleware::class,
+
+        // role
         'role_id'=> \App\Http\Middleware\RoleId::class,
     ];
 }

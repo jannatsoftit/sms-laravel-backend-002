@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
+     * personal_access_tokens Table. This table related to
+     * Sanctum and store the access tokens in case
+     * you used the api tokens instead of cookies for authentication.
+     *
+     */
+
+    /**
      * Run the migrations.
      */
     public function up(): void
