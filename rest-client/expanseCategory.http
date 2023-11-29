@@ -1,0 +1,35 @@
+### List
+
+GET http://127.0.0.1:8000/api/expanseCategories
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/expanseCategories
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Sports Fees"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/expanseCategories/1
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/expanseCategories/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Sports Fees"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/expanseCategories/1
+Accept: application/json
+

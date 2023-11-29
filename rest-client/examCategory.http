@@ -1,0 +1,38 @@
+### List
+
+GET http://127.0.0.1:8000/api/examCategories
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/examCategories
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "title",
+  "class_name": "class_name",
+  "section_name": "A"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/examCategories/4
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/examCategories/6
+Accept: application/json
+Content-Type: application/json
+{
+    "title": "fgjhfg",
+    "class_name": "Islam",
+    "section_name": "B"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/examCategories/6
+Accept: application/json
+

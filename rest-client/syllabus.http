@@ -1,0 +1,41 @@
+### List
+
+GET http://127.0.0.1:8000/api/syllabuses
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/syllabuses
+Accept: application/json
+Content-Type: application/json
+
+{
+  "class_name": "Ten",
+  "subject_name": "English",
+  "topic": "English For Today (Class-IX & X)- By NCTB",
+  "paper": "1st"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/syllabuses/1
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/syllabuses/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "class_name": "Ten",
+  "subject_name": "English",
+  "topic": "English Grammar & Composition(Class-IX & X)- By NCTB",
+  "paper": "2nd"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/syllabuses/
+Accept: application/json
+
