@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('designation');
             $table->string('password');
+            $table->string('password_confirmation');
             $table->string('image');
             $table->string('gender');
             $table->string('department');

@@ -30,6 +30,7 @@ class TeacherListController extends Controller
                         'designation',
                         'department',
                         'password',
+                        'password_confirmation',
                         'user_information',
                         'image',
                         'gender',

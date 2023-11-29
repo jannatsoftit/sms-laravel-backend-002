@@ -3,6 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// -------Auth Controller --------//
+
+use App\Http\Controllers\API\AuthController;
+
+
+
+
+
+
+
+
 //----- Custom Admin Dashboard Start -----//
 
 use App\Http\Controllers\Admin\Admin\{
@@ -163,9 +174,15 @@ use App\Http\Controllers\Admin\School\{
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+    // Auth routes
+    Route::post('register', [AuthController::class, 'register']);
+
+
+
+
+    // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    //     return $request->user();
+    // });
 
 Route::group(['middleware' => 'admin','auth'], function(){
 

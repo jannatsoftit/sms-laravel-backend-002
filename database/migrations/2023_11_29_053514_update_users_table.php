@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('school', function (Blueprint $table) {
-            $table->string('facebook_page')->nullable()->after('address');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('password_confirmation')->nullable()->after('password');
         });
     }
 
@@ -21,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumn('school');
+        Schema::dropColumn('users');
     }
 };
