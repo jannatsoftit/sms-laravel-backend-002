@@ -1,0 +1,39 @@
+### List
+
+GET http://127.0.0.1:8000/api/grades
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/grades
+Accept: application/json
+Content-Type: application/json
+
+{
+  "grade_point": "2",
+  "letter_grade": "F",
+  "marks_interval": "90"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/grades/5
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/grades/5
+Accept: application/json
+Content-Type: application/json
+
+{
+  "grade_point": "4.5",
+  "letter_grade": "A",
+  "marks_interval": "76"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/grades/5
+Accept: application/json
+
