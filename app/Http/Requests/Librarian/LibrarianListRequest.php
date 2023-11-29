@@ -52,7 +52,7 @@ class LibrarianListRequest extends FormRequest
 
     return [
       'columns' => 'nullable|array|min:1',
-      'columns.*' => 'required|alpha_dash|distinct|in:*,first_name,last_name,email,designation,department,password,user_information,image,gender',
+      'columns.*' => 'required|alpha_dash|distinct|in:*,first_name,last_name,email,phone_number,date_of_birth,address,blood_group,designation,department,password,password_confirmation,image,gender',
     //   'page' => 'nullable|integer|min:1',
     //   'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

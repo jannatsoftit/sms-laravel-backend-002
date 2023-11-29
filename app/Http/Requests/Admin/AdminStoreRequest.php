@@ -34,15 +34,19 @@ class AdminStoreRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'first_name' => 'required',
-      'last_name' => 'required',
-      'email' => 'required',
-      'designation' => 'required',
-      'department' => 'required',
-      'password' => 'required',
-      'user_information' => 'required',
-      'image' => 'required|image|mimes:jpg,png,jpeg,svg,gif,webp|max:2048',
-      'gender' => 'required',
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'email' => 'required',
+        'phone_number' => 'required',
+        'date_of_birth' => 'required',
+        'address' => 'required',
+        'blood_group' => 'required',
+        'designation' => 'required',
+        'department' => 'required',
+        'password' => 'required',
+        'password_confirmation' => 'required',
+        'image' => 'required|image|mimes:jpg,png,jpeg,svg,gif,webp|max:2048',
+        'gender' => 'required',
     ];
   }
 }
