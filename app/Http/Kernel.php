@@ -44,12 +44,12 @@ class Kernel extends HttpKernel
              * This Sanctum middleware is responsible for ensuring that incoming requests from your
              * react app can authenticate using Laravel’s session cookies.
              *
-             * 
              */
 
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            
         ],
     ];
 

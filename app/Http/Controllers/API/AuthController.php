@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\User;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 
 class AuthController extends Controller
@@ -61,7 +61,7 @@ class AuthController extends Controller
                     'token'=>$token,
                     'message'=>'Registered Successfully',
                 ]);
-                
+
             }
 
     }
@@ -70,8 +70,9 @@ class AuthController extends Controller
     public function login(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email|max:50|', //unique:users,email
-            'password' => 'required|min:5',
+            'email' => 'required|email', //unique:users,email
+            'password' => 'required',
+            'password_confirmation' => 'required|min:5',
         ]);
 
         if($validator->fails())
@@ -79,12 +80,13 @@ class AuthController extends Controller
             return response()->json([
                 'validation_errors'=> $validator->messages(),
             ]);
+
         }else
         {
 
             $user = User::where('email', $request->email)->first();
 
-            if(! $user || ! Hash::check($request->password, $user->password))
+            if(!$user || (!Hash::check($request->password, $user->password) && !Hash::check($request->password_confirmation, $user->password_confirmation)))
             {
                 return response()->json([
                     'status'=>401,
@@ -97,13 +99,14 @@ class AuthController extends Controller
 
                 return response()->json([
                     'status'=>200,
-                    'username'=>$user->first_name,
                     'token'=>$token,
+                    'user_name'=>$user->first_name,
+                    'user_email'=>$user->email,
                     'message'=>'Login Successfully',
                 ]);
 
             }
- 
+
         }
 
     }
