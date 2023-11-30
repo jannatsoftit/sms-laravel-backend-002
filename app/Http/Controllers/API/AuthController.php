@@ -6,12 +6,17 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
 
 class AuthController extends Controller
 {
+
+
+    //--------- Register function ---------//
+
     public function register(Request $request){
 
             // Validation
@@ -66,6 +71,7 @@ class AuthController extends Controller
 
     }
 
+    //--------- Login function ---------//
 
     public function login(Request $request){
 
@@ -100,9 +106,9 @@ class AuthController extends Controller
                 return response()->json([
                     'status'=>200,
                     'token'=>$token,
-                    'user_name'=>$user->first_name,
+                    'username'=>$user->first_name,
                     'user_email'=>$user->email,
-                    'message'=>'Login Successfully',
+                    'message'=>'Logged In Successfully',
                 ]);
 
             }
@@ -110,5 +116,19 @@ class AuthController extends Controller
         }
 
     }
+
+
+    //--------- Logout function ---------//
+
+    public function logout()
+    {
+        Auth::user()->tokens()->delete();
+        return response()->json([
+            'status' => 200,
+            'message' => 'Logged Out Successfully',
+        ]);
+    }
+
+
 
 }
