@@ -108,6 +108,7 @@ class AuthController extends Controller
                     'token'=>$token,
                     'username'=>$user->first_name,
                     'user_email'=>$user->email,
+                    'role_id' => $user->role_id,
                     'message'=>'Logged In Successfully',
                 ]);
 
