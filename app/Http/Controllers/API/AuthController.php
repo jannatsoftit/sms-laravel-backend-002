@@ -33,6 +33,7 @@ class AuthController extends Controller
                 'designation' => 'required|max:50',
                 'department' => 'required|max:50',
                 'gender' => 'required|max:50',
+                'role_id' => 'required',
             ]);
 
             if($validator->fails())
@@ -42,7 +43,6 @@ class AuthController extends Controller
                 ]);
             }else
             {
-
                 $user = User::create([
                     'first_name'=>$request->first_name,
                     'last_name'=>$request->last_name,
@@ -56,6 +56,7 @@ class AuthController extends Controller
                     'designation'=>$request->designation,
                     'department'=>$request->department,
                     'gender'=>$request->gender,
+                    'role_id'=>$request->role_id,
                 ]);
 
                 $token = $user->createToken($user->email.'_Token')->plainTextToken;
@@ -76,8 +77,8 @@ class AuthController extends Controller
     public function login(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email', //unique:users,email
-            'password' => 'required',
+            'email' => 'required|email|max:50', //unique:users,email
+            'password' => 'required|min:5',
             'password_confirmation' => 'required|min:5',
         ]);
 
@@ -108,7 +109,7 @@ class AuthController extends Controller
                     'token'=>$token,
                     'username'=>$user->first_name,
                     'user_email'=>$user->email,
-                    'role_id' => $user->role_id,
+                    'role_id'=>$user->role_id,
                     'message'=>'Logged In Successfully',
                 ]);
 
@@ -121,14 +122,14 @@ class AuthController extends Controller
 
     //--------- Logout function ---------//
 
-    public function logout()
-    {
-        Auth::user()->tokens()->delete();
-        return response()->json([
-            'status' => 200,
-            'message' => 'Logged Out Successfully',
-        ]);
-    }
+    // public function logout()
+    // {
+    //     Auth::user()->tokens()->delete();
+    //     return response()->json([
+    //         'status' => 200,
+    //         'message' => 'Logged Out Successfully',
+    //     ]);
+    // }
 
 
 

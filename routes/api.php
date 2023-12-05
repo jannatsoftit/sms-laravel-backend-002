@@ -167,23 +167,18 @@ use App\Http\Controllers\Admin\School\{
 |
 */
 
+    // Route::middleware(['auth:sanctum'])->group(function() {
+    //     Route::post('logout', [AuthController::class, 'logout']);
+    // });
+
+
     // Auth routes
     Route::post('register', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
 
 
-    Route::middleware(['auth:sanctum'])->group(function() {
 
-        Route::post('logout', [AuthController::class, 'logout']);
-
-    });
-
-
-
-
-
-
-Route::group(['middleware' => 'admin','auth'], function(){
+// Route::controller(Admin::class)->group(function(){
 
     //---- Admin profile routes
     // Route::get('admin/dashboard', [AdminDashboardController::class, 'adminDashboard'])->name('admin.dashboard')->middleware('role_id');
@@ -383,6 +378,6 @@ Route::group(['middleware' => 'admin','auth'], function(){
     });
 
 
-});
+// });
 
 
