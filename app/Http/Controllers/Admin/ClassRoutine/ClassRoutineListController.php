@@ -24,11 +24,11 @@ class ClassRoutineListController extends Controller
                 'classRoutines' => ClassRoutine::where('school_id', 1)->get(
                     $columns = [
                         'id',
-                        'day',
                         'class_name',
-                        'subject_name',
-                        'paper',
-                        'class_time',
+                        // 'day',
+                        // 'subject_name',
+                        // 'paper',
+                        // 'class_time',
                     ],
                 ),
             ],

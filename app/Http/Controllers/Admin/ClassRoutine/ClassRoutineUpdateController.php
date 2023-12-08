@@ -23,11 +23,11 @@ class ClassRoutineUpdateController extends Controller
             'data' => [
                 $validated = $request->validated(),
                 'classRoutine' => $classRoutine->update([
-                    'day' => $validated['day'],
                     'class_name' => $validated['class_name'],
-                    'subject_name' => $validated['subject_name'],
-                    'paper' => $validated['paper'],
-                    'class_time' => $validated['class_time'],
+                    // 'day' => $validated['day'],
+                    // 'subject_name' => $validated['subject_name'],
+                    // 'paper' => $validated['paper'],
+                    // 'class_time' => $validated['class_time'],
                 ]),
             ],
             'message' => 'Class Routine updated successfully.',

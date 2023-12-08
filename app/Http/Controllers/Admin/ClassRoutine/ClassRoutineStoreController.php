@@ -23,11 +23,11 @@ class ClassRoutineStoreController extends Controller
         $validated = $request->validated(),
         'data' => [
                 'classRoutine' => ClassRoutine::create([
-                    'day' => $validated['day'],
                     'class_name' => $validated['class_name'],
-                    'subject_name' => $validated['subject_name'],
-                    'paper' => $validated['paper'],
-                    'class_time' => $validated['class_time'],
+                    // 'day' => $validated['day'],
+                    // 'subject_name' => $validated['subject_name'],
+                    // 'paper' => $validated['paper'],
+                    // 'class_time' => $validated['class_time'],
                 ]),
             ],
             'message' => 'Class Routine Store Successful.',

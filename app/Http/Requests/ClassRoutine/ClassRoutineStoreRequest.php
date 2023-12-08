@@ -34,11 +34,11 @@ class ClassRoutineStoreRequest extends FormRequest
   public function rules(): array
   {
     return [
-        'day' => 'required',
         'class_name' => 'required',
-        'subject_name' => 'required',
-        'paper' => 'required',
-        'class_time' => 'required',
+        // 'day' => 'required',
+        // 'subject_name' => 'required',
+        // 'paper' => 'required',
+        // 'class_time' => 'required',
     ];
   }
 }
