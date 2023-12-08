@@ -25,9 +25,9 @@ class SyllabusListController extends Controller
                     $columns = [
                         'id',
                         'class_name',
-                        'subject_name',
-                        'topic',
-                        'paper',
+                        // 'subject_name',
+                        // 'topic',
+                        // 'paper',
                     ],
                 ),
             ],

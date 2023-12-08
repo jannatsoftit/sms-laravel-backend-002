@@ -52,7 +52,7 @@ class SyllabusListRequest extends FormRequest
 
     return [
         'columns' => 'nullable|array|min:1',
-        'columns.*' => 'required|alpha_dash|distinct|in:*,class_name,subject_name,topic,paper',
+        'columns.*' => 'required|alpha_dash|distinct|in:*,class_name',
         // 'page' => 'nullable|integer|min:1',
         // 'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

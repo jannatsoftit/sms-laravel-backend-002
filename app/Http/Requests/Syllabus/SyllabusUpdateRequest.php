@@ -35,9 +35,9 @@ class SyllabusUpdateRequest extends FormRequest
   {
     return [
         'class_name' => 'required',
-        'subject_name' => 'required',
-        'topic' => 'required',
-        'paper' => 'required',
+        // 'subject_name' => 'required',
+        // 'topic' => 'required',
+        // 'paper' => 'required',
     ];
   }
 }

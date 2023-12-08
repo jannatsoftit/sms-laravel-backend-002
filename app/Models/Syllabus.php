@@ -12,9 +12,9 @@ class Syllabus extends Model
 
     protected $fillable = [
         'class_name',
-        'subject_name',
-        'paper',
-        'topic',
+        // 'subject_name',
+        // 'paper',
+        // 'topic',
         'school_id',
     ];
 

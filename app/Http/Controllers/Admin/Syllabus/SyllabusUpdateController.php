@@ -24,9 +24,9 @@ class SyllabusUpdateController extends Controller
                 $validated = $request->validated(),
                 'syllabus' => $syllabus->update([
                     'class_name' => $validated['class_name'],
-                    'subject_name' => $validated['subject_name'],
-                    'topic' => $validated['topic'],
-                    'paper' => $validated['paper'],
+                    // 'subject_name' => $validated['subject_name'],
+                    // 'topic' => $validated['topic'],
+                    // 'paper' => $validated['paper'],
                 ]),
             ],
             'message' => 'Syllabus updated successfully.',
