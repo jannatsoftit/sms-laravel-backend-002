@@ -19,21 +19,48 @@ class MarkUpdateController extends Controller
 
     public function __invoke(MarkUpdateRequest $request, Mark $mark): JsonResponse
     {
+        $validated = $request->validated();
+
+        if(!empty($validated['file'])){
+
+            $file = $validated['file'];
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            // admin image save in storage file:
+            $file->storeAs('public/AD_img', $fileName);
+            $newFile = $fileName;
+
+        }else{
+            $newFile = '';
+        }
+
+        if(!empty($validated['file'])){
+
         return response()->json([
             'data' => [
                 $validated = $request->validated(),
                 'mark' => $mark->update([
                     'student_name' => $validated['student_name'],
-                    'total_marks' => $validated['total_marks'],
-                    'grade_point' => $validated['grade_point'],
                     'class_name' => $validated['class_name'],
-                    'letter_grade' => $validated['letter_grade'],
-                    'section' => $validated['section'],
-                    'comment' => $validated['comment'],
+                    'file' => $fileName,
                 ]),
             ],
-            'message' => 'Mark updated successfully.',
+            'message' => 'Exam Result file updated successfully.',
         ]);
 
+        }elseif(empty($validated['file'])){
+
+            return response()->json([
+                'data' => [
+                    $validated = $request->validated(),
+                    'mark' => $mark->update([
+                        'student_name' => $validated['student_name'],
+                        'class_name' => $validated['class_name'],
+                        'file' => $fileName,
+                    ]),
+                ],
+                'message' => 'Exam Result file updated successfully.',
+            ]);
+        }
     }
+
 }

@@ -52,7 +52,8 @@ class MarkListRequest extends FormRequest
 
     return [
         'columns' => 'nullable|array|min:1',
-        'columns.*' => 'required|alpha_dash|distinct|in:*,student_name,total_marks,grade_point,class_name,letter_grade,section,comment',
+        'columns.*' => 'required|alpha_dash|distinct|in:*,student_name,
+        class_name,file',
         // 'page' => 'nullable|integer|min:1',
         // 'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

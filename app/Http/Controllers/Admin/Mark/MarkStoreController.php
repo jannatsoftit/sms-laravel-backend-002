@@ -19,21 +19,25 @@ class MarkStoreController extends Controller
    public function __invoke(MarkStoreRequest $request): JsonResponse
    {
 
+    if($request->has('file')){
+        
+        $file = $request->file('file');
+        $fileName = time().'.'.$file->getClientOriginalExtension();
+
+        // result file save in storage file:
+        $file->storeAs('public/ER_img', $fileName);
+
        return response()->json([
-           $validated = $request->validated(),
            'data' => [
                 'mark' => Mark::create([
-                    'student_name' => $validated['student_name'],
-                    'total_marks' => $validated['total_marks'],
-                    'grade_point' => $validated['grade_point'],
-                    'class_name' => $validated['class_name'],
-                    'letter_grade' => $validated['letter_grade'],
-                    'section' => $validated['section'],
-                    'comment' => $validated['comment'],
+                    'student_name' => $request->student_name,
+                    'class_name' => $request->class_name,
+                    'file' => $fileName,
                 ]),
             ],
             'message' => 'Mark Store Successful.',
         ]);
+    }
    }
 
 }

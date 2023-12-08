@@ -24,8 +24,6 @@ class ExamCategoryStoreController extends Controller
            'data' => [
                 'examCategory' => ExamCategory::create([
                     'title' => $validated['title'],
-                    'class_name' => $validated['class_name'],
-                    'section_name' => $validated['section_name'],
                 ]),
             ],
             'message' => 'Exam Category Store Successful.',

@@ -13,12 +13,13 @@ class Mark extends Model
 
     protected $fillable = [
         'student_name',
+        'class_name',
+        'file',
+        'comment',
         'total_marks',
         'grade_point',
-        'class_name',
         'letter_grade',
         'section',
-        'comment',
         'school_id',
     ];
 

@@ -24,8 +24,6 @@ class ExamCategoryUpdateController extends Controller
                 $validated = $request->validated(),
                 'examCategory' => $examCategory->update([
                     "title" => $validated['title'],
-                    "class_name" => $validated['class_name'],
-                    "section_name" => $validated['section_name'],
                 ]),
             ],
             'message' => 'Exam Category updated successfully.',

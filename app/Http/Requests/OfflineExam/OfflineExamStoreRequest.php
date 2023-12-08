@@ -35,15 +35,9 @@ class OfflineExamStoreRequest extends FormRequest
   {
     return [
         'exam_name' => 'required',
-        'paper' =>'required',
         'class_name' => 'required',
-        'section' => 'required',
-        'subject_code' => 'required',
-        'date_time' => 'required',
         'exam_start_time' => 'required',
         'exam_end_time' => 'required',
-        'building_name' =>'required',
-        'room_number' => 'required',
         'total_marks' => 'required',
     ];
   }

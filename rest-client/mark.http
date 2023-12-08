@@ -11,12 +11,8 @@ Content-Type: application/json
 
 {
     "student_name": "Friha",
-    "total_marks": "67",
-    "grade_point": "4.22",
     "class_name": "One",
-    "letter_grade": "B",
-    "section": "B",
-    "comment": "Need Inprovement"
+    "file": "Need Inprovement",
 }
 
 ### Show
@@ -32,12 +28,8 @@ Content-Type: application/json
 
 {
     "student_name": "Friha99",
-    "total_marks": "67",
-    "grade_point": "4.22",
     "class_name": "One",
-    "letter_grade": "B",
-    "section": "B",
-    "comment": "Need Inprovement"
+    "file": "Need Inprovement",
 }
 
 ### Destroy

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('total_marks');  //marks_obtain
             $table->decimal('grade_point', 5, 2); //Earned Grade Point
             $table->string('class_name');
+            $table->string('file');
             $table->string('letter_grade');
             $table->string('section');
             $table->string('comment');

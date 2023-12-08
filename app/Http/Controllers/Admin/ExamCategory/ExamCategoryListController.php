@@ -25,8 +25,6 @@ class ExamCategoryListController extends Controller
                     $columns = [
                         'id',
                         'title',
-                        'class_name',
-                        'section_name',
                     ],
                 ),
             ],

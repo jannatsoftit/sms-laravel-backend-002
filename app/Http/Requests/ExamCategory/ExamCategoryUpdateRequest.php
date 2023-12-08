@@ -35,8 +35,6 @@ class ExamCategoryUpdateRequest extends FormRequest
   {
     return [
       'title' => 'required',
-      'class_name' => 'required',
-      'section_name' => 'required',
     ];
   }
 }

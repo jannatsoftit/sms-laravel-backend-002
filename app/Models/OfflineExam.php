@@ -15,16 +15,16 @@ class OfflineExam extends Model
 
     protected $fillable = [
         'exam_name',
-        'paper',
         'class_name',
-        'section',
-        'subject_code',
-        'date_time',
         'exam_start_time',
         'exam_end_time',
-        'building_name',
-        'room_number',
         'total_marks',
+        // 'paper',
+        // 'section',
+        // 'subject_code',
+        // 'date_time',
+        // 'building_name',
+        // 'room_number',
         'school_id',
     ];
 

@@ -35,12 +35,8 @@ class MarkStoreRequest extends FormRequest
   {
     return [
         'student_name' => 'required',
-        'total_marks' => 'required',
-        'grade_point' => 'required',
         'class_name' => 'required',
-        'letter_grade' => 'required',
-        'section' => 'required',
-        'comment' => 'required',
+        'file' => 'required|mimes:pdf,jpg,jpeg,png,doc,xls,ppt,docx,xlsx,pptx|max:14048',
     ];
   }
 }

@@ -33,7 +33,6 @@ class AuthController extends Controller
                 'designation' => 'required|max:50',
                 'department' => 'required|max:50',
                 'gender' => 'required|max:50',
-                'role_id' => 'required',
             ]);
 
             if($validator->fails())
@@ -43,7 +42,7 @@ class AuthController extends Controller
                 ]);
             }else
             {
-                $user = User::create([
+                    $user = User::create([
                     'first_name'=>$request->first_name,
                     'last_name'=>$request->last_name,
                     'email'=>$request->email,
@@ -56,17 +55,17 @@ class AuthController extends Controller
                     'designation'=>$request->designation,
                     'department'=>$request->department,
                     'gender'=>$request->gender,
-                    'role_id'=>$request->role_id,
-                ]);
+                    ]);
 
-                $token = $user->createToken($user->email.'_Token')->plainTextToken;
+                    $token = $user->createToken($user->email.'_Token')->plainTextToken;
 
-                return response()->json([
-                    'status'=>200,
-                    'username'=>$user->first_name,
-                    'token'=>$token,
-                    'message'=>'Registered Successfully',
-                ]);
+                    return response()->json([
+                        'status'=>200,
+                        'username'=>$user->first_name,
+                        'token'=>$token,
+                        'message'=>'Registered Successfully',
+                    ]);
+                
 
             }
 
@@ -108,7 +107,14 @@ class AuthController extends Controller
                     'status'=>200,
                     'token'=>$token,
                     'username'=>$user->first_name,
-                    'user_email'=>$user->email,
+                    'last_name'=>$user->last_name,
+                    'email'=>$user->email,
+                    'address'=>$user->address,
+                    'phone_number'=>$user->phone_number,
+                    'gender'=>$user->gender,
+                    'department'=>$user->department,
+                    'blood_group'=>$user->blood_group,
+                    'image'=>$user->image,
                     'role_id'=>$user->role_id,
                     'message'=>'Logged In Successfully',
                 ]);

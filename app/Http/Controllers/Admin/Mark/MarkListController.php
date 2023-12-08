@@ -25,12 +25,8 @@ class MarkListController extends Controller
                     $columns = [
                         'id',
                         'student_name',
-                        'total_marks',
-                        'grade_point',
                         'class_name',
-                        'letter_grade',
-                        'section',
-                        'comment',
+                        'file',
                     ],
                 ),
             ],

@@ -52,9 +52,8 @@ class OfflineExamListRequest extends FormRequest
 
     return [
         'columns' => 'nullable|array|min:1',
-        'columns.*' => 'required|alpha_dash|distinct|in:*,exam_name,paper,
-        class_name,section,subject_code,date_time,exam_start_time,exam_end_time,
-        building_name,room_number,total_marks',
+        'columns.*' => 'required|alpha_dash|distinct|in:*,exam_name,
+        class_name,exam_start_time,exam_end_time,total_marks',
         // 'page' => 'nullable|integer|min:1',
         // 'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

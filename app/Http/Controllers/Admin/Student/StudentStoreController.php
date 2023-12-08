@@ -45,8 +45,6 @@ class StudentStoreController extends Controller
                 'password_confirmation'=>Hash::make($request->password_confirmation),
                 'image' => $imageName,
                 'gender' => $request->gender,
-                'role_id' => '2',
-                'school_id' => '1',
               ])
           ],
           'message' => 'Student Store Successful.',

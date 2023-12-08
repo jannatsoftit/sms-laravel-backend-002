@@ -28,10 +28,10 @@ return new class extends Migration
             $table->string('image');
             $table->string('gender');
             $table->timestamp('email_verified_at')->nullable();
-            $table->unsignedBigInteger('role_id')->nullable();
-            $table->foreign('role_id')->references('id')->on('roles');
             $table->unsignedBigInteger('school_id')->nullable();
             $table->foreign('school_id')->references('id')->on('school');
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->rememberToken()->unique();
             $table->timestamps();
         });
