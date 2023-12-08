@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class ClassRoom extends Model
+class BookList extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'class_room_name',
-        'room_number',
-        'building_name',
-        'area',
-        'total_room',
+        'book_name',
+        'author',
+        'copies',
+        'available_copies',
         'school_id',
     ];
 
@@ -26,7 +25,7 @@ class ClassRoom extends Model
      *
      * @var string
      */
-    protected $table = 'class_room';
+    protected $table = 'book_list';
 
     public function school(): HasOne
     {

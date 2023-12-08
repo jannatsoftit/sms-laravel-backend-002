@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Requests\ClassRoom;
+namespace App\Http\Requests\BookList;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClassRoomListRequest extends FormRequest
+class BookListListRequest extends FormRequest
 {
 
   /**
-   * Determine if the ClassRoom is authorized to make this request.
+   * Determine if the BookList is authorized to make this request.
    *
    * @return bool
    */
@@ -52,7 +52,7 @@ class ClassRoomListRequest extends FormRequest
 
     return [
         'columns' => 'nullable|array|min:1',
-        'columns.*' => 'required|alpha_dash|distinct|in:*,class_room_name,room_number,building_name,area,total_room',
+        'columns.*' => 'required|alpha_dash|distinct|in:*,book_name',
         // 'page' => 'nullable|integer|min:1',
         // 'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

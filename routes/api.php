@@ -94,12 +94,12 @@ use App\Http\Controllers\Admin\OfflineExam\{
 };
 
 
-use App\Http\Controllers\Admin\ClassRoom\{
-    ClassRoomDestroyController,
-    ClassRoomListController,
-    ClassRoomShowController,
-    ClassRoomStoreController,
-    ClassRoomUpdateController,
+use App\Http\Controllers\Admin\BookList\{
+    BookListDestroyController,
+    BookListListController,
+    BookListShowController,
+    BookListStoreController,
+    BookListUpdateController,
 };
 
 use App\Http\Controllers\Admin\Subject\{
@@ -302,13 +302,13 @@ use App\Http\Controllers\Admin\School\{
 
 
     // Class Room
-    Route::group(['prefix' => 'classRooms'], function() {
-        Route::get('', ClassRoomListController::class);
-        Route::post('', ClassRoomStoreController::class);
-        Route::group(['prefix' => '{classRoom}'], function() {
-        Route::get('', ClassRoomShowController::class);
-        Route::put('', ClassRoomUpdateController::class);
-        Route::delete('', ClassRoomDestroyController::class);
+    Route::group(['prefix' => 'bookLists'], function() {
+        Route::get('', BookListListController::class);
+        Route::post('', BookListStoreController::class);
+        Route::group(['prefix' => '{bookList}'], function() {
+        Route::get('', BookListShowController::class);
+        Route::put('', BookListUpdateController::class);
+        Route::delete('', BookListDestroyController::class);
         });
     });
 

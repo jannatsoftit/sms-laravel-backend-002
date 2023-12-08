@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\ClassRoom;
+namespace App\Http\Requests\BookList;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClassRoomStoreRequest extends FormRequest
+class BookListUpdateRequest extends FormRequest
 {
   /**
-   * Determine if the ClassRoom is authorized to make this request.
+   * Determine if the BookList is authorized to make this request.
    *
    * @return bool
    */
@@ -34,11 +34,8 @@ class ClassRoomStoreRequest extends FormRequest
   public function rules(): array
   {
     return [
-        'class_room_name' => 'required',
-        'room_number' => 'required',
-        'building_name' => 'required',
-        'area' => 'required',
-        'total_room' => 'required',
+        'book_name' => 'required',
     ];
   }
 }
+

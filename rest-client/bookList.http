@@ -1,0 +1,42 @@
+### List
+
+GET http://127.0.0.1:8000/api/bookLists
+
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/bookLists
+Accept: application/json
+Content-Type: application/json
+
+{
+    "book_name": "Class Room",
+    "author": "201",
+    "copies": "Shapla Building",
+    "available_copies": "2025 m"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/bookLists/1
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/bookLists/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "book_name": "Class Room",
+    "author": "201",
+    "copies": "Shapla Building",
+    "available_copies": "2025 m"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/bookLists/1
+Accept: application/json
+
