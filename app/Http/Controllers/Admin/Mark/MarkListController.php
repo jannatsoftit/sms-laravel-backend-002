@@ -26,7 +26,7 @@ class MarkListController extends Controller
                         'id',
                         'student_name',
                         'class_name',
-                        'file',
+                        //'file',
                     ],
                 ),
             ],

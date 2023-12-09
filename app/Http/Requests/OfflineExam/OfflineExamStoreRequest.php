@@ -35,7 +35,7 @@ class OfflineExamStoreRequest extends FormRequest
   {
     return [
         'exam_name' => 'required',
-        'class_name' => 'required',
+        //'class_name' => 'required',
         'exam_start_time' => 'required',
         'exam_end_time' => 'required',
         'total_marks' => 'required',

@@ -102,6 +102,15 @@ use App\Http\Controllers\Admin\BookList\{
     BookListUpdateController,
 };
 
+use App\Http\Controllers\Admin\SchoolMagazine\{
+    SchoolMagazineDestroyController,
+    SchoolMagazineListController,
+    SchoolMagazineShowController,
+    SchoolMagazineStoreController,
+    SchoolMagazineUpdateController,
+};
+
+
 use App\Http\Controllers\Admin\Subject\{
     SubjectDestroyController,
     SubjectListController,
@@ -301,7 +310,7 @@ use App\Http\Controllers\Admin\School\{
     });
 
 
-    // Class Room
+    // Book List
     Route::group(['prefix' => 'bookLists'], function() {
         Route::get('', BookListListController::class);
         Route::post('', BookListStoreController::class);
@@ -312,16 +321,28 @@ use App\Http\Controllers\Admin\School\{
         });
     });
 
-    // Subject
-    Route::group(['prefix' => 'subjects'], function() {
-        Route::get('', SubjectListController::class);
-        Route::post('', SubjectStoreController::class);
-        Route::group(['prefix' => '{subject}'], function() {
-        Route::get('', SubjectShowController::class);
-        Route::put('', SubjectUpdateController::class);
-        Route::delete('', SubjectDestroyController::class);
+    // School Magazine
+    Route::group(['prefix' => 'schoolMagazines'], function() {
+        Route::get('', SchoolMagazineListController::class);
+        Route::post('', SchoolMagazineStoreController::class);
+        Route::group(['prefix' => '{schoolMagazine}'], function() {
+        Route::get('', SchoolMagazineShowController::class);
+        Route::put('', SchoolMagazineUpdateController::class);
+        Route::delete('', SchoolMagazineDestroyController::class);
         });
     });
+
+
+    // Subject
+    // Route::group(['prefix' => 'subjects'], function() {
+    //     Route::get('', SubjectListController::class);
+    //     Route::post('', SubjectStoreController::class);
+    //     Route::group(['prefix' => '{subject}'], function() {
+    //     Route::get('', SubjectShowController::class);
+    //     Route::put('', SubjectUpdateController::class);
+    //     Route::delete('', SubjectDestroyController::class);
+    //     });
+    // });
 
     // Syllabus
     Route::group(['prefix' => 'syllabuses'], function() {

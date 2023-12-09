@@ -14,7 +14,6 @@ class Mark extends Model
     protected $fillable = [
         'student_name',
         'class_name',
-        'file',
         'comment',
         'total_marks',
         'grade_point',

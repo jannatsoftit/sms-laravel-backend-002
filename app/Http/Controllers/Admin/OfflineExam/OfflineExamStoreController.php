@@ -24,7 +24,7 @@ class OfflineExamStoreController extends Controller
            'data' => [
                 'offlineExam' => OfflineExam::create([
                     'exam_name' => $validated['exam_name'],
-                    'class_name' => $validated['class_name'],
+                    //'class_name' => $validated['class_name'],
                     'exam_start_time' => $validated['exam_start_time'],
                     'exam_end_time' => $validated['exam_end_time'],
                     'total_marks' => $validated['total_marks'],

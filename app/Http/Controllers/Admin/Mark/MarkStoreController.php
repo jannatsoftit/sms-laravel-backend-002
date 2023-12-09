@@ -20,7 +20,7 @@ class MarkStoreController extends Controller
    {
 
     if($request->has('file')){
-        
+
         $file = $request->file('file');
         $fileName = time().'.'.$file->getClientOriginalExtension();
 
@@ -32,7 +32,7 @@ class MarkStoreController extends Controller
                 'mark' => Mark::create([
                     'student_name' => $request->student_name,
                     'class_name' => $request->class_name,
-                    'file' => $fileName,
+                    //'file' => $fileName,
                 ]),
             ],
             'message' => 'Mark Store Successful.',

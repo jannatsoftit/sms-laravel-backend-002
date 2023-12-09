@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Mark;
+namespace App\Http\Requests\SchoolMagazine;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MarkStoreRequest extends FormRequest
+class SchoolMagazineStoreRequest extends FormRequest
 {
   /**
-   * Determine if the Mark is authorized to make this request.
+   * Determine if the SchoolMagazine is authorized to make this request.
    *
    * @return bool
    */
@@ -34,9 +34,7 @@ class MarkStoreRequest extends FormRequest
   public function rules(): array
   {
     return [
-        'student_name' => 'required',
-        'class_name' => 'required',
-        //'file' => 'required|mimes:pdf,jpg,jpeg,png,doc,xls,ppt,docx,xlsx,pptx|max:14048',
+        'magazine_name' => 'required',
     ];
   }
 }

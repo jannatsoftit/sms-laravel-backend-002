@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Mark;
+namespace App\Http\Requests\SchoolMagazine;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MarkListRequest extends FormRequest
+class SchoolMagazineListRequest extends FormRequest
 {
 
   /**
-   * Determine if the Mark is authorized to make this request.
+   * Determine if the SchoolMagazine is authorized to make this request.
    *
    * @return bool
    */
@@ -52,8 +52,7 @@ class MarkListRequest extends FormRequest
 
     return [
         'columns' => 'nullable|array|min:1',
-        'columns.*' => 'required|alpha_dash|distinct|in:*,student_name,
-        class_name',
+        'columns.*' => 'required|alpha_dash|distinct|in:*,magazine_name',
         // 'page' => 'nullable|integer|min:1',
         // 'perPage' => 'nullable|integer|in:10,25,50,100',
     ];

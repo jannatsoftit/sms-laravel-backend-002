@@ -25,7 +25,7 @@ class OfflineExamListController extends Controller
                     $columns = [
                         'id',
                         'exam_name',
-                        'class_name',
+                        //'class_name',
                         'exam_start_time',
                         'exam_end_time',
                         'total_marks',
