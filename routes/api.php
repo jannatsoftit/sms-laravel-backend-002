@@ -161,6 +161,38 @@ use App\Http\Controllers\Admin\School\{
     SchoolUpdateController,
 };
 
+use App\Http\Controllers\Admin\TeachingStaff\{
+    TeachingStaffListController,
+    TeachingStaffShowController,
+    TeachingStaffStoreController,
+    TeachingStaffUpdateController,
+    TeachingStaffDestroyController,
+};
+
+use App\Http\Controllers\Admin\HSTeachingStaff\{
+    HSTeachingStaffListController,
+    HSTeachingStaffShowController,
+    HSTeachingStaffStoreController,
+    HSTeachingStaffUpdateController,
+    HSTeachingStaffDestroyController,
+};
+
+use App\Http\Controllers\Admin\PTeachingStaff\{
+    PTeachingStaffListController,
+    PTeachingStaffShowController,
+    PTeachingStaffStoreController,
+    PTeachingStaffUpdateController,
+    PTeachingStaffDestroyController,
+};
+
+use App\Http\Controllers\Admin\NonTeachingStaff\{
+    NonTeachingStaffListController,
+    NonTeachingStaffShowController,
+    NonTeachingStaffStoreController,
+    NonTeachingStaffUpdateController,
+    NonTeachingStaffDestroyController,
+};
+
 
 
 //----- Custom Admin Dashboard End -----//
@@ -332,18 +364,6 @@ use App\Http\Controllers\Admin\School\{
         });
     });
 
-
-    // Subject
-    // Route::group(['prefix' => 'subjects'], function() {
-    //     Route::get('', SubjectListController::class);
-    //     Route::post('', SubjectStoreController::class);
-    //     Route::group(['prefix' => '{subject}'], function() {
-    //     Route::get('', SubjectShowController::class);
-    //     Route::put('', SubjectUpdateController::class);
-    //     Route::delete('', SubjectDestroyController::class);
-    //     });
-    // });
-
     // Syllabus
     Route::group(['prefix' => 'syllabuses'], function() {
         Route::get('', SyllabusListController::class);
@@ -387,6 +407,53 @@ use App\Http\Controllers\Admin\School\{
         Route::delete('', ExpanseCategoryDestroyController::class);
         });
     });
+
+    //Teaching Staff
+    Route::group(['prefix' => 'teachingStaffs'], function() {
+        Route::get('', TeachingStaffListController::class);
+        Route::post('', TeachingStaffStoreController::class);
+        Route::group(['prefix' => '{teachingStaff}'], function() {
+        Route::get('', TeachingStaffShowController::class);
+        Route::put('', TeachingStaffUpdateController::class);
+        Route::delete('', TeachingStaffDestroyController::class);
+        });
+    });
+
+    //HSTeaching Staff
+    Route::group(['prefix' => 'hsteachingStaffs'], function() {
+        Route::get('', HSTeachingStaffListController::class);
+        Route::post('', HSTeachingStaffStoreController::class);
+        Route::group(['prefix' => '{hsteachingStaff}'], function() {
+        Route::get('', HSTeachingStaffShowController::class);
+        Route::put('', HSTeachingStaffUpdateController::class);
+        Route::delete('', HSTeachingStaffDestroyController::class);
+        });
+    });
+
+
+    //PTeaching Staff
+    Route::group(['prefix' => 'pteachingStaffs'], function() {
+        Route::get('', PTeachingStaffListController::class);
+        Route::post('', PTeachingStaffStoreController::class);
+        Route::group(['prefix' => '{pteachingStaff}'], function() {
+        Route::get('', PTeachingStaffShowController::class);
+        Route::put('', PTeachingStaffUpdateController::class);
+        Route::delete('', PTeachingStaffDestroyController::class);
+        });
+    });
+
+
+    //NonTeaching Staff
+    Route::group(['prefix' => 'nonteachingStaffs'], function() {
+        Route::get('', NonTeachingStaffListController::class);
+        Route::post('', NonTeachingStaffStoreController::class);
+        Route::group(['prefix' => '{nonteachingStaff}'], function() {
+        Route::get('', NonTeachingStaffShowController::class);
+        Route::put('', NonTeachingStaffUpdateController::class);
+        Route::delete('', NonTeachingStaffDestroyController::class);
+        });
+    });
+
 
     // School Information:
     Route::group(['prefix' => 'schools'], function() {

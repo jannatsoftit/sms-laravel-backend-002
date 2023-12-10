@@ -24,7 +24,7 @@ class SchoolMagazineListController extends Controller
                 'schoolMagazines' => SchoolMagazine::where('school_id', 1)->get(
                     $columns = [
                         'id',
-                        'book_name',
+                        'magazine_name',
                     ],
                 ),
             ],

@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+
+class NonTeachingStaff extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'designation',
+        'image',
+        'school_id',
+    ];
+
+    // protected $primaryKey = 'id';
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'nonteaching_staff';
+
+    public function school(): HasOne
+    {
+        return $this->hasOne(School::class);
+    }
+}

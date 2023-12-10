@@ -1,0 +1,39 @@
+### List
+
+GET http://127.0.0.1:8000/api/hsteachingStaffs
+Accept: application/json
+
+### Store
+
+POST http://127.0.0.1:8000/api/hsteachingStaffs
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "designation": "Software Engineer",
+  "image": "dgfd.jpg"
+}
+
+### Show
+
+GET http://127.0.0.1:8000/api/hsteachingStaffs/1
+Accept: application/json
+
+### Update
+
+PUT http://127.0.0.1:8000/api/hsteachingStaffs/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "designation": "Software Engineer",
+  "image": "dgfd.jpg"
+}
+
+### Destroy
+
+DELETE http://127.0.0.1:8000/api/hsteachingStaffs/1
+Accept: application/json
+

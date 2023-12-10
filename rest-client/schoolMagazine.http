@@ -11,7 +11,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "magazine_name": "Class Room"
+    "magazine_name": "School Mgazone 2023"
 }
 
 ### Show
@@ -26,7 +26,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "magazine_name": "Class Room"
+    "magazine_name": "School Mgazone 2024"
 }
 
 ### Destroy
