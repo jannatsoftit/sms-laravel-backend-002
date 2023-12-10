@@ -444,10 +444,10 @@ use App\Http\Controllers\Admin\NonTeachingStaff\{
 
 
     //NonTeaching Staff
-    Route::group(['prefix' => 'nonteachingStaffs'], function() {
+    Route::group(['prefix' => 'nonTeachingStaffs'], function() {
         Route::get('', NonTeachingStaffListController::class);
         Route::post('', NonTeachingStaffStoreController::class);
-        Route::group(['prefix' => '{nonteachingStaff}'], function() {
+        Route::group(['prefix' => '{nonTeachingStaff}'], function() {
         Route::get('', NonTeachingStaffShowController::class);
         Route::put('', NonTeachingStaffUpdateController::class);
         Route::delete('', NonTeachingStaffDestroyController::class);

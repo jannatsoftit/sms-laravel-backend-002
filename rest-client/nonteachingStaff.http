@@ -1,11 +1,11 @@
 ### List
 
-GET http://127.0.0.1:8000/api/nonteachingStaffs
+GET http://127.0.0.1:8000/api/nonTeachingStaffs
 Accept: application/json
 
 ### Store
 
-POST http://127.0.0.1:8000/api/nonteachingStaffs
+POST http://127.0.0.1:8000/api/nonTeachingStaffs
 Accept: application/json
 Content-Type: application/json
 
@@ -17,12 +17,12 @@ Content-Type: application/json
 
 ### Show
 
-GET http://127.0.0.1:8000/api/nonteachingStaffs/1
+GET http://127.0.0.1:8000/api/nonTeachingStaffs/1
 Accept: application/json
 
 ### Update
 
-PUT http://127.0.0.1:8000/api/nonteachingStaffs/1
+PUT http://127.0.0.1:8000/api/nonTeachingStaffs/1
 Accept: application/json
 Content-Type: application/json
 
@@ -34,6 +34,6 @@ Content-Type: application/json
 
 ### Destroy
 
-DELETE http://127.0.0.1:8000/api/nonteachingStaffs/1
+DELETE http://127.0.0.1:8000/api/nonTeachingStaffs/1
 Accept: application/json
 
