@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\ExamCategory;
+namespace App\Http\Requests\AdmissionCircular;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ExamCategoryUpdateRequest extends FormRequest
+class AdmissionCircularUpdateRequest extends FormRequest
 {
   /**
-   * Determine if the ExamCategory is authorized to make this request.
+   * Determine if the AdmissionCircular is authorized to make this request.
    *
    * @return bool
    */

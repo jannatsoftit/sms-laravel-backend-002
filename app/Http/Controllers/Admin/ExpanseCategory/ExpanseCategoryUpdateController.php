@@ -19,15 +19,24 @@ class ExpanseCategoryUpdateController extends Controller
 
     public function __invoke(ExpanseCategoryUpdateRequest $request, ExpanseCategory $expanseCategory): JsonResponse
     {
-        $expanseCategory->update($request->validated());
-
         return response()->json([
             'data' => [
-                'expanseCategory' => $expanseCategory,
+                $validated = $request->validated(),
+                'expanseCategory' => $expanseCategory->update([
+                    "title" => $validated['title'],
+                ]),
             ],
-            'message' => 'Expanse Category updated successfully.',
+            'message' => 'Exam Category updated successfully.',
         ]);
 
     }
 }
+
+    // $examCategory->update($request->validated());
+    // return response()->json([
+    //     'data' => [
+    //         'examCategory' => $examCategory,
+    //     ],
+    //     'message' => 'Exam Category updated successfully.',
+    // ]);
 

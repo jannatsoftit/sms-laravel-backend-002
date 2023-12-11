@@ -22,7 +22,7 @@ class ExpanseCategoryDestroyController extends Controller
 
         return response()->json([
             'data' => [
-                'expanseCategory' => $expanseCategory,
+                '$expanseCategory' => $expanseCategory,
             ],
             'message' => 'Expanse Category Deleted Successfully.'
         ]);

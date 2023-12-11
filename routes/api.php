@@ -61,12 +61,12 @@ use App\Http\Controllers\Admin\Librarian\{
     LibrarianUpdateController,
 };
 
-use App\Http\Controllers\Admin\ExamCategory\{
-    ExamCategoryDestroyController,
-    ExamCategoryListController,
-    ExamCategoryShowController,
-    ExamCategoryStoreController,
-    ExamCategoryUpdateController,
+use App\Http\Controllers\Admin\AdmissionCircular\{
+    AdmissionCircularDestroyController,
+    AdmissionCircularListController,
+    AdmissionCircularShowController,
+    AdmissionCircularStoreController,
+    AdmissionCircularUpdateController,
 };
 
 use App\Http\Controllers\Admin\Grade\{
@@ -296,14 +296,14 @@ use App\Http\Controllers\Admin\NonTeachingStaff\{
     });
 
 
-    // Exam category
-    Route::group(['prefix' => 'examCategories'], function() {
-        Route::get('', ExamCategoryListController::class);
-        Route::post('', ExamCategoryStoreController::class);
-        Route::group(['prefix' => '{examCategory}'], function() {
-        Route::get('', ExamCategoryShowController::class);
-        Route::put('', ExamCategoryUpdateController::class);
-        Route::delete('', ExamCategoryDestroyController::class);
+    // Admission Circular
+    Route::group(['prefix' => 'admissionCirculars'], function() {
+        Route::get('', AdmissionCircularListController::class);
+        Route::post('', AdmissionCircularStoreController::class);
+        Route::group(['prefix' => '{admissionCircular}'], function() {
+        Route::get('', AdmissionCircularShowController::class);
+        Route::put('', AdmissionCircularUpdateController::class);
+        Route::delete('', AdmissionCircularDestroyController::class);
         });
     });
 

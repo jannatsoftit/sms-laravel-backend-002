@@ -7,14 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class ExamCategory extends Model
+class AdmissionCircular extends Model
 {
     use HasFactory;
 
     protected $fillable = [
          'title',
-         'class_name',
-         'section_name',
          'school_id',
     ];
 

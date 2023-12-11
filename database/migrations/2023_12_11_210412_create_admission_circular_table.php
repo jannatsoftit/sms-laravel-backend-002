@@ -8,16 +8,12 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('exam_category', function (Blueprint $table) {
+        Schema::create('admission_circular', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('class_name');
-            $table->string('section_name');
             $table->unsignedBigInteger('school_id')->nullable();
             $table->foreign('school_id')->references('id')->on('school');
             $table->unsignedBigInteger('class_list_id')->nullable();
@@ -28,11 +24,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('exam_category');
+        Schema::dropIfExists('admission_circular');
     }
 };
