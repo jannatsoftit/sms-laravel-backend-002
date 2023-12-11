@@ -49,6 +49,8 @@ class AdminStoreController extends Controller
                 'password_confirmation'=>Hash::make($request->password_confirmation),
                 'image' => $imageName,
                 'gender' => $request->gender,
+                'role_id' => '1',
+                'school_id' => '1',
               ]
             ),
           ],

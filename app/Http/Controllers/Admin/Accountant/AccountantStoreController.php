@@ -46,6 +46,8 @@ class AccountantStoreController extends Controller
                 'gender' => $request->gender,
                 'password'=>Hash::make($request->password),
                 'password_confirmation'=>Hash::make($request->password_confirmation),
+                'role_id' => '5',
+                'school_id' => '1',
               ]
             ),
           ],

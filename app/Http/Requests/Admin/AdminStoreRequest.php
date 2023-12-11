@@ -47,6 +47,8 @@ class AdminStoreRequest extends FormRequest
         'password_confirmation' => 'required',
         'image' => 'required|image|mimes:jpg,png,jpeg,svg,gif,webp|max:2048',
         'gender' => 'required',
+        'role_id' => '1',
+        'school_id' => '1',
     ];
   }
 }

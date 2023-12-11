@@ -116,6 +116,7 @@ class AuthController extends Controller
                     'blood_group'=>$user->blood_group,
                     'image'=>$user->image,
                     'role_id'=>$user->role_id,
+                    'school_id'=>$user->school_id,
                     'message'=>'Logged In Successfully',
                 ]);
 
