@@ -58,6 +58,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getFirstNameAttribute($value)
+	{
+		return $this->attributes['first_name'] = ucfirst($value);
+	}
+
     public function school(): HasOne
     {
         return $this->hasOne(School::class);
