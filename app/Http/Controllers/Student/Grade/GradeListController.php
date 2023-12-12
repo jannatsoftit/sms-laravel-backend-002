@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Grade;
+namespace App\Http\Controllers\Student\Grade;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Grade\GradeListRequest;

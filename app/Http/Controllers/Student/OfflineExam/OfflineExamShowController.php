@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\OfflineExam;
+namespace App\Http\Controllers\Student\OfflineExam;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\PTeachingStaff;
+namespace App\Http\Controllers\Student\PTeachingStaff;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;

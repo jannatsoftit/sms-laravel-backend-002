@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\ClassRoutine;
+namespace App\Http\Controllers\Student\ClassRoutine;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;

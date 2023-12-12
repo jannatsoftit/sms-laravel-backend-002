@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\StudentFee;
+namespace App\Http\Controllers\Student\StudentFee;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentFee\StudentFeeListRequest;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\School;
+namespace App\Http\Controllers\Student\School;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
@@ -38,39 +38,6 @@ class SchoolShowController extends Controller
 
         }
 
-
-    // return response()->json([
-    //     'data' => [
-    //         'school' => School::where('school_id', 1)->get(
-    //             $columns = [
-    //                 'id',
-    //                 'first_name',
-    //                 'last_name',
-    //                 'email',
-    //                 'designation',
-    //                 'department',
-    //                 'password',
-    //                 'user_information',
-    //                 'image',
-    //                 'gender',
-    //             ],
-    //         ),
-    //     ],
-
-    //     'message' => 'School list successful.',
-    // ]);
-
-    // return response()->json([
-    //     'data' => [
-    //         'school' => $school,
-    //     ],
-    //     'message' => 'School Show Successful.',
-    // ]);
-
     }
-
-
-
-
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\OfflineExam;
+namespace App\Http\Controllers\Student\OfflineExam;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OfflineExam\OfflineExamListRequest;
@@ -25,16 +25,9 @@ class OfflineExamListController extends Controller
                     $columns = [
                         'id',
                         'exam_name',
-                        //'class_name',
                         'exam_start_time',
                         'exam_end_time',
                         'total_marks',
-                        // 'paper',
-                        // 'section',
-                        // 'subject_code',
-                        // 'date_time',
-                        // 'building_name',
-                        // 'room_number',
                     ],
                 ),
             ],

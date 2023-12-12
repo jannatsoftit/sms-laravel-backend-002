@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Teacher;
+namespace App\Http\Controllers\Student\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\TeacherListRequest;

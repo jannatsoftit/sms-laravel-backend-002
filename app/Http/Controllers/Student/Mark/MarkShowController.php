@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Mark;
+namespace App\Http\Controllers\Student\Mark;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\ExpanseCategory;
+namespace App\Http\Controllers\Student\ExpanseCategory;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;

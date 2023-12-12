@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\AdmissionCircular;
+namespace App\Http\Controllers\Student\AdmissionCircular;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdmissionCircular\AdmissionCircularListRequest;

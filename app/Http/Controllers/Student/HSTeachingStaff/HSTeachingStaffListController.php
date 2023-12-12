@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\HSTeachingStaff;
+namespace App\Http\Controllers\Student\HSTeachingStaff;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HSTeachingStaff\HSTeachingStaffListRequest;
