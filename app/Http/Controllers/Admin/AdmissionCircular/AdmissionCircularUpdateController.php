@@ -23,7 +23,10 @@ class AdmissionCircularUpdateController extends Controller
 
         return response()->json([
             'data' => [
-                'admissionCircular' => $admissionCircular,
+                $validated = $request->validated(),
+                'admissionCircular' => $admissionCircular->update([
+                    'title' => $validated['title'],
+                ]),
             ],
             'message' => 'Admission Circular updated successfully.',
         ]);

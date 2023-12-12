@@ -23,7 +23,7 @@ class ExpanseCategoryUpdateController extends Controller
             'data' => [
                 $validated = $request->validated(),
                 'expanseCategory' => $expanseCategory->update([
-                    "title" => $validated['title'],
+                    "name" => $validated['name'],
                 ]),
             ],
             'message' => 'Exam Category updated successfully.',

@@ -23,7 +23,8 @@ class AdmissionCircularStoreController extends Controller
            $validated = $request->validated(),
            'data' => [
                 'admissionCircular' => AdmissionCircular::create([
-                    'name' => $validated['name'],
+                    'title' => $validated['title'],
+                    'school_id' => '1',
                 ]),
             ],
             'message' => 'Admission Circular Store Successful.',

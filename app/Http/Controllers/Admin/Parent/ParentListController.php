@@ -21,7 +21,7 @@ class ParentListController extends Controller
     {
         return response()->json([
             'data' => [
-                'parents' => User::where('role_id', 3)->where('school_id', 1)->get(
+                'parents' => User::where('role_id', 4)->where('school_id', 1)->get(
                     $columns = [
                         'id',
                         'first_name',

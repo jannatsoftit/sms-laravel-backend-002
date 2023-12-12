@@ -23,7 +23,7 @@ class ExpanseCategoryStoreController extends Controller
            $validated = $request->validated(),
            'data' => [
                 'expanseCategory' => ExpanseCategory::create([
-                    'title' => $validated['title'],
+                    'name' => $validated['name'],
                 ]),
             ],
             'message' => 'Expanse Category Store Successful.',

@@ -28,7 +28,7 @@ class TeacherStoreController extends Controller
         $imageName = time().'.'.$image->getClientOriginalExtension();
 
         // Teacher image save in storage file:
-        $image->storeAs('public/T_img', $imageName);
+        $image->storeAs('public/AD_img', $imageName);
 
       return response()->json([
           'data' => [

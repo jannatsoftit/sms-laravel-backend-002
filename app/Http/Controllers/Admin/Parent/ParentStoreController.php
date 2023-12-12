@@ -28,7 +28,7 @@ class ParentStoreController extends Controller
         $imageName = time().'.'.$image->getClientOriginalExtension();
 
         // Parent image save in storage file:
-        $image->storeAs('public/P_img', $imageName);
+        $image->storeAs('public/AD_img', $imageName);
 
         return response()->json([
             'data' => [

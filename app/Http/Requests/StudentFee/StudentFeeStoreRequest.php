@@ -40,6 +40,7 @@ class StudentFeeStoreRequest extends FormRequest
         'total_amount' => 'required',
         'paid_amount' => 'required',
         'status' => 'required',
+        'school_id' => '1',
     ];
   }
 }

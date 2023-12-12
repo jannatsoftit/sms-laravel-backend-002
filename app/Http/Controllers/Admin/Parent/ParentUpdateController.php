@@ -30,7 +30,7 @@ class ParentUpdateController extends Controller
             $imageName = time().'.'.$file->getClientOriginalExtension();
 
             // parent image save in storage file:
-            $file->storeAs('public/P_img', $imageName);
+            $file->storeAs('public/AD_img', $imageName);
             $image = $imageName;
 
         }else{

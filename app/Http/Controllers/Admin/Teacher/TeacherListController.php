@@ -21,7 +21,7 @@ class TeacherListController extends Controller
     {
         return response()->json([
             'data' => [
-                'teachers' => User::where('role_id', 4)->where('school_id', 1)->get(
+                'teachers' => User::where('role_id', 3)->where('school_id', 1)->get(
                     $columns = [
                         'id',
                         'first_name',

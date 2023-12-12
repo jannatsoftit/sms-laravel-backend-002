@@ -35,6 +35,7 @@ class AdmissionCircularStoreRequest extends FormRequest
   {
     return [
         'title' => 'required',
+        'school_id' => '1',
     ];
   }
 }

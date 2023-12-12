@@ -35,7 +35,7 @@ class AdmissionCircular extends Model
      *
      * @var string
      */
-    protected $table = 'exam_category';
+    protected $table = 'admission_circular';
 
     public function school(): HasOne
     {

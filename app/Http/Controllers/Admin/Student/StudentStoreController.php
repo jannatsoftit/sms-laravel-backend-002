@@ -27,7 +27,7 @@ class StudentStoreController extends Controller
         $imageName = time().'.'.$image->getClientOriginalExtension();
 
         // student image save in storage file:
-        $image->storeAs('public/S_img', $imageName);
+        $image->storeAs('public/AD_img', $imageName);
 
       return response()->json([
           'data' => [

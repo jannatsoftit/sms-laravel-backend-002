@@ -29,6 +29,7 @@ class StudentFeeStoreController extends Controller
                     'total_amount' => $validated['total_amount'],
                     'paid_amount' => $validated['paid_amount'],
                     'status' => $validated['status'],
+                    'school_id' => '1',
                 ]),
             ],
             'message' => 'Student Fee Store Successful.',

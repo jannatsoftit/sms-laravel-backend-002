@@ -29,7 +29,7 @@ class StudentUpdateController extends Controller
             $imageName = time().'.'.$file->getClientOriginalExtension();
 
             // student image save in storage file:
-            $file->storeAs('public/S_img', $imageName);
+            $file->storeAs('public/AD_img', $imageName);
             $image = $imageName;
 
         }else{

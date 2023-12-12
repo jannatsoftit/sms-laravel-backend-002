@@ -24,7 +24,7 @@ class AdmissionCircularListController extends Controller
                 'admissionCirculars' => AdmissionCircular::where('school_id', 1)->get(
                     $columns = [
                         'id',
-                        'name',
+                        'title',
                     ],
                 ),
             ],

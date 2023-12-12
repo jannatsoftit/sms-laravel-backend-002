@@ -21,10 +21,10 @@ class ExpanseCategoryListController extends Controller
     {
         return response()->json([
             'data' => [
-                'expanseCategorys' => ExpanseCategory::where('school_id', 1)->get(
+                'expanseCategories' => ExpanseCategory::where('school_id', 1)->get(
                     $columns = [
                         'id',
-                        'title',
+                        'name',
                     ],
                 ),
             ],

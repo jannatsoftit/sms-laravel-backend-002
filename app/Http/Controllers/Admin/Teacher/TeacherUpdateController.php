@@ -27,7 +27,7 @@ class TeacherUpdateController extends Controller
             $file = $validated['image'];
             $imageName = time().'.'.$file->getClientOriginalExtension();
             // Teacher image save in storage file:
-            $file->storeAs('public/T_img', $imageName);
+            $file->storeAs('public/AD_img', $imageName);
             $image = $imageName;
 
         }else{
