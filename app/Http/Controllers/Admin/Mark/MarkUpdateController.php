@@ -55,7 +55,6 @@ class MarkUpdateController extends Controller
                     'mark' => $mark->update([
                         'student_name' => $validated['student_name'],
                         'class_name' => $validated['class_name'],
-                        //'file' => $fileName,
                     ]),
                 ],
                 'message' => 'Exam Result file updated successfully.',

@@ -24,6 +24,7 @@ class SyllabusStoreController extends Controller
         'data' => [
                 'syllabus' => Syllabus::create([
                     'class_name' => $validated['class_name'],
+                    'school_id' => '1',
                     // 'subject_name' => $validated['subject_name'],
                     // 'topic' => $validated['topic'],
                     // 'paper' => $validated['paper'],

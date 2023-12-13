@@ -36,6 +36,7 @@ class TeachingStaffStoreController extends Controller
                 'name' => $request->name,
                 'designation' => $request->designation,
                 'image' => $imageName,
+                'school_id' => '1',
               ]
             ),
           ],

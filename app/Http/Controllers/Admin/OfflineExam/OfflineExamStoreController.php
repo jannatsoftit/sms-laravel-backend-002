@@ -28,6 +28,7 @@ class OfflineExamStoreController extends Controller
                     'exam_start_time' => $validated['exam_start_time'],
                     'exam_end_time' => $validated['exam_end_time'],
                     'total_marks' => $validated['total_marks'],
+                    'school_id' => '1',
                     // 'paper' => $validated['paper'],
                     // 'section' => $validated['section'],
                     // 'subject_code' => $validated['subject_code'],

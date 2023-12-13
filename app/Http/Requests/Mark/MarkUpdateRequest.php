@@ -36,7 +36,6 @@ class MarkUpdateRequest extends FormRequest
     return [
         'student_name' => 'required',
         'class_name' => 'required',
-        //'file' => 'required|mimes:pdf,jpg,jpeg,png,doc,xls,ppt,docx,xlsx,pptx|max:14048',
     ];
   }
 }
